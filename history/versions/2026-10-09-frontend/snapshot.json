@@ -1,0 +1,234 @@
+{
+  "id": "2026-10-09-frontend",
+  "scope": [
+    "frontend"
+  ],
+  "source_evidence": {
+    "archive_sha256": "e1b44f7f3e6dbd44e2c235f50737f858c9359d6822554ed8f2ef7ed882b87802",
+    "time_basis": "交接包名称及ZIP内部日期，仅作辅助时间标记"
+  },
+  "archived_at": "2026-11-17T22:23:28.787988+08:00",
+  "limitations": "原样恢复留存源码文本；未包含照片、构建产物、运行数据库、依赖及密钥。局部前端版本不代表当时完整项目状态。历史时间依据不是本次Git提交时间。",
+  "files": {
+    "frontend/index.html": {
+      "sha256": "c536b3b1daaca268a8f79a225817334298ca1a9252ed7e83bccb2bb77a2e1ea3",
+      "bytes": 569
+    },
+    "frontend/package-lock.json": {
+      "sha256": "97138fd6157df5e3fcf6460063d0bf29d51a74ac0af9b026be9d4021b8b4e66a",
+      "bytes": 96212
+    },
+    "frontend/package.json": {
+      "sha256": "44c7b36d476f1bc656e019defc9b3a5108a53cc3b867505759745dceaf041665",
+      "bytes": 753
+    },
+    "frontend/playwright.config.ts": {
+      "sha256": "3e3036dc55819bb6857a3ac3d89fc39b4f9c3a0f19d5eebd542d2ec24e1cee56",
+      "bytes": 522
+    },
+    "frontend/tsconfig.app.json": {
+      "sha256": "b3e4e2496a33a578ded89d74763b8e1d78a11c970325af981d3d4d2f5d82e6e7",
+      "bytes": 475
+    },
+    "frontend/tsconfig.json": {
+      "sha256": "770b4140bbb581e2dfd9ea9946ffc9c75a1d86ba7d2db5f77c83e37cbdf9d808",
+      "bytes": 119
+    },
+    "frontend/tsconfig.node.json": {
+      "sha256": "1bd81331c3f3394ff564b17c8aef818d47cc978e543cb88e187de7017f7742fa",
+      "bytes": 215
+    },
+    "frontend/vite.config.ts": {
+      "sha256": "cd8ed38e9fd11d3fe0a8eebd99be78bcbcd0095c7943b551e3348ecb565cf983",
+      "bytes": 1271
+    },
+    "frontend/vitest.config.ts": {
+      "sha256": "6a1ee31a33bf8ebfdb9ec6b16e79b939efbed781409d213f7d0c444ea7fb6dbd",
+      "bytes": 288
+    },
+    "frontend/src/App.vue": {
+      "sha256": "52318347b17a541247b9c304fdd476dff11be6248b47862f0d760e056433728b",
+      "bytes": 2583
+    },
+    "frontend/src/env.d.ts": {
+      "sha256": "b61ba723029bad40d8f46de302240fd24ce70dd3ff906d1822926ef179f69628",
+      "bytes": 198
+    },
+    "frontend/src/main.ts": {
+      "sha256": "51370008cea4e550cfe7268b5cf67a1c93cb7f01103a3d720947628f3bd4471a",
+      "bytes": 246
+    },
+    "frontend/src/api/amap.ts": {
+      "sha256": "d2341d6518d02806cd00f8bb7a1f665e2070dc5215058f07cec2551177e4d3ec",
+      "bytes": 981
+    },
+    "frontend/src/api/client.ts": {
+      "sha256": "5ef1519724262161df3f30a4d4ca8f4d0a0222e5ad1501a189c6af422a8364b7",
+      "bytes": 1598
+    },
+    "frontend/src/components/AMapCampus.vue": {
+      "sha256": "28d92036d5d8e7d56739c4279391ffa6e2d03d3a657762c5f369d4ce8459235a",
+      "bytes": 6383
+    },
+    "frontend/src/components/AppIcon.vue": {
+      "sha256": "54fe1fb5c9a2176967463519308b2ac06d03dccb78e0ab44517816cf740710ba",
+      "bytes": 1284
+    },
+    "frontend/src/components/CampusPicker.vue": {
+      "sha256": "403e5494ac27218cfa60340284e8cb48286395acdae558c7cb1ea99d73873306",
+      "bytes": 11635
+    },
+    "frontend/src/components/ThreeScene.vue": {
+      "sha256": "71debb24956e33eb820084d93d604903dd54c3fc478e547b05f1ffca8afb8433",
+      "bytes": 11555
+    },
+    "frontend/src/router/index.ts": {
+      "sha256": "7223b55b11643d64f8d473e9afab94e339184403d1a6e0db7c503529d7390fbb",
+      "bytes": 10421
+    },
+    "frontend/src/stores/auth.ts": {
+      "sha256": "20199678d8b05f264ceaa88ff7d9e4097f9e8271049897ef8daaf84074cf0a34",
+      "bytes": 1222
+    },
+    "frontend/src/styles/global.css": {
+      "sha256": "e9531a2fc1edd8e936382cc50e876441f526c9f8403d048aa018fb672cac3057",
+      "bytes": 5290
+    },
+    "frontend/src/styles/tokens.css": {
+      "sha256": "e4b99c5994aed663c4814cfe8ed41aef59f620991ad891bcc3096afd19d3b079",
+      "bytes": 632
+    },
+    "frontend/src/views/FeaturePage.vue": {
+      "sha256": "960f8a3ec3aae3da90233aae5afbf37fd5b8d41132ee631c46e54c20239ac291",
+      "bytes": 3538
+    },
+    "frontend/src/views/admin/AdminOverviewView.vue": {
+      "sha256": "59911a47631cccf8fd4b2f12a56116ca4b01285ca7bcfa97e680622608f321fb",
+      "bytes": 6905
+    },
+    "frontend/src/views/admin/AdminResourceView.vue": {
+      "sha256": "e174a9097b2ad51fac908d7d29317393b5a7a8dafc4871dd2241755f859fea16",
+      "bytes": 12250
+    },
+    "frontend/src/views/public/CampusMapView.vue": {
+      "sha256": "3be58024493f4a7bbb111110c8a9f5c5a8118aafb85a8b30c36783b859fa2164",
+      "bytes": 3736
+    },
+    "frontend/src/views/public/HomeView.vue": {
+      "sha256": "4749065a5a09189ec5bf95628acecbab6d44f85913640ac44dfa0136dae60f73",
+      "bytes": 4584
+    },
+    "frontend/src/views/public/ItemDetailView.vue": {
+      "sha256": "82f52821526d18f90f421df9c1982cf596983cda94cd9e8ad0bc1b763f08f636",
+      "bytes": 5458
+    },
+    "frontend/src/views/public/ItemGalleryView.vue": {
+      "sha256": "e48d016aca03a1fb94523f6e7f7d7244697d0e70d51100f1c3d83c1b53425993",
+      "bytes": 6708
+    },
+    "frontend/src/views/public/PublicContentView.vue": {
+      "sha256": "eed65502d91a3d52334e833df66d7e8343d544da7ae0edd5d1802c6d279c7a4c",
+      "bytes": 2881
+    },
+    "frontend/src/views/public/SearchView.vue": {
+      "sha256": "740f76dc40d26f71aae9bd2841a8efe3b638bb7a983f74c92e2f72315f463ff9",
+      "bytes": 5269
+    },
+    "frontend/src/views/public/StationDetailView.vue": {
+      "sha256": "8eaf6d4474f688bb08971dfac3f378c3cc7359b646f15e25ddc32747abaefb3b",
+      "bytes": 3747
+    },
+    "frontend/src/views/public/StationsView.vue": {
+      "sha256": "75fd436e1a015459f07a1bcdc3c29b9973adc1a9f274c98b3a5cdf89e8761cd6",
+      "bytes": 2607
+    },
+    "frontend/src/views/system/LoginView.vue": {
+      "sha256": "6be8f9185344b28e39d392034ed30d359655e72222fc35d08db50d1bc9c2f923",
+      "bytes": 5375
+    },
+    "frontend/src/views/system/NotFoundView.vue": {
+      "sha256": "d2d26d5714a5059250f09b28b7dbce8b9c5c00d2167228c11d233ae6868a99fa",
+      "bytes": 1831
+    },
+    "frontend/src/views/system/RecoveryView.vue": {
+      "sha256": "39abf8974a6db8f14c32794b1e2df6a3175391a9438117fa513e65780487babd",
+      "bytes": 2143
+    },
+    "frontend/src/views/user/AccountHubView.vue": {
+      "sha256": "eb01a7bd655e9a7e8afd28a66b59c8b196d9034abb68bef6929abe54f6830d2d",
+      "bytes": 12216
+    },
+    "frontend/src/views/user/ClaimCreateView.vue": {
+      "sha256": "13cba4c7b1b1d03d2b13f5615c9472c8d28df8ca6eac0221993e038d05d66278",
+      "bytes": 3582
+    },
+    "frontend/src/views/user/ClaimDetailView.vue": {
+      "sha256": "5b8b1d723c2672cec2828924e2b67d1903c7bb47724d8eef5ecd8a35ce4c72dd",
+      "bytes": 7441
+    },
+    "frontend/src/views/user/ClaimsListView.vue": {
+      "sha256": "36216f2e0ed068eadb35f398039aa5ec4424a3fe52d811e518edeb33852d3c20",
+      "bytes": 3054
+    },
+    "frontend/src/views/user/DraftsView.vue": {
+      "sha256": "6f058bc8b3fe1259294eed5a6a49c858f5413c5c7fb7ce5b161cf35c817cf958",
+      "bytes": 3064
+    },
+    "frontend/src/views/user/HandoverView.vue": {
+      "sha256": "8b6f4affb6a01887ac17b2a368525c30ee87d0ceadd9e466d429250c22ea032b",
+      "bytes": 3063
+    },
+    "frontend/src/views/user/MatchCenterView.vue": {
+      "sha256": "be77dbdd6ffdd64268c17919cae502f68b41ab833b9c66074a4015f589906026",
+      "bytes": 6117
+    },
+    "frontend/src/views/user/MatchCompareView.vue": {
+      "sha256": "d0bdbce2fa9084057b77a39ed26d8c763a5cf21849373938acb89fd32a7c3592",
+      "bytes": 7060
+    },
+    "frontend/src/views/user/MatchReportView.vue": {
+      "sha256": "df0db860a5f540ffe9d1c84e211834559682984cbae5efd5e14d55d927d11cd6",
+      "bytes": 5665
+    },
+    "frontend/src/views/user/MessagesView.vue": {
+      "sha256": "cba61379a593a51db76671ec326780e7e23920d726792564a142fa254478729d",
+      "bytes": 6606
+    },
+    "frontend/src/views/user/NotificationsView.vue": {
+      "sha256": "1a97936dfa2214e1ed4de264e978720f2347edfc26946459794a0b1eb1632f86",
+      "bytes": 3467
+    },
+    "frontend/src/views/user/PublishView.vue": {
+      "sha256": "7f4eccc8d2dabf11dbd8ac2c5e367bfee84995ee2ffa3500bdbfb73336077347",
+      "bytes": 10483
+    },
+    "frontend/tests/e2e/smoke.spec.ts": {
+      "sha256": "f2d41fde00fe973fd41ee56103241da171f5277fe515eb81631aa43e10fa7b4f",
+      "bytes": 10315
+    },
+    "frontend/tests/unit/amap-campus.spec.ts": {
+      "sha256": "5c66001da86bd087fe9f1da988e8b155ec273b2f5096276dd37e551b3c48e4be",
+      "bytes": 2266
+    },
+    "frontend/tests/unit/api-client.spec.ts": {
+      "sha256": "832c1d090981e435b48d94b8c9fe2a33c02bec8e924b8149d4ad0889da377cf1",
+      "bytes": 1468
+    },
+    "frontend/tests/unit/app-icon.spec.ts": {
+      "sha256": "797793fcf02490e27155088b240fbb59441dd03d2657ca9c8703d6abde8789d1",
+      "bytes": 696
+    },
+    "frontend/tests/unit/auth-store.spec.ts": {
+      "sha256": "9a9cdd40965068546a5f9f378f4d8f0b0d328ff1712e7f6c9cd5f2a17cb6f8b1",
+      "bytes": 1435
+    },
+    "frontend/tests/unit/campus-picker.spec.ts": {
+      "sha256": "856995fa4378abc878913fd3cfcd96da128feb73a7984086f6e4f8683ccff30a",
+      "bytes": 1977
+    },
+    "frontend/tests/unit/three-scene.spec.ts": {
+      "sha256": "2636a6c812e542820e13983527b8232628010e615d64a944e35142b9536d223b",
+      "bytes": 1316
+    }
+  }
+}
