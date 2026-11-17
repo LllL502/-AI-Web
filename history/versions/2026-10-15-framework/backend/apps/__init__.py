@@ -1,0 +1,1 @@
+"""CampusTrace domain applications."""
