@@ -1,0 +1,10 @@
+{
+  "artifacts/ten-fixes/verification-summary.json": "evidence/verification-summary.json",
+  "artifacts/ten-fixes/real-dialogue.json": "evidence/real-dialogue.json",
+  "artifacts/ten-fixes/dynamic-voice.json": "evidence/dynamic-voice.json",
+  "artifacts/ten-fixes/dynamic-voice.wav": "evidence/dynamic-voice.wav",
+  "artifacts/ten-fixes/browser-summary.json": "evidence/browser-summary.json",
+  "artifacts/backend-fixes/local-restore.json": "evidence/local-restore.json",
+  "artifacts/benchmark/assistant-fixed-v2-all-20261115T144313957097.json": "evidence/benchmark/assistant-fixed-v2-all-20261115T144313957097.json",
+  "artifacts/benchmark/assistant-fixed-v2-development-20261115T144122304952.json": "evidence/benchmark/assistant-fixed-v2-development-20261115T144122304952.json"
+}

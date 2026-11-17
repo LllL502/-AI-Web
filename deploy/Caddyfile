@@ -1,0 +1,41 @@
+{$DOMAIN} {
+    encode zstd gzip
+
+    log {
+        output stdout
+        format json
+    }
+
+    request_body {
+        max_size 25MB
+    }
+
+    @django path /api/* /django-admin/* /_AMapService/* /media/*
+    handle @django {
+        reverse_proxy backend:8000 {
+            health_uri /api/v1/health/
+            health_interval 30s
+            health_timeout 5s
+        }
+    }
+
+    handle_path /static/* {
+        root * /static
+        file_server
+    }
+
+    handle {
+        root * /srv
+        try_files {path} /index.html
+        file_server
+    }
+
+    header {
+        -Server
+        X-Content-Type-Options nosniff
+        X-Frame-Options DENY
+        Referrer-Policy same-origin
+        Permissions-Policy "camera=(), microphone=(), geolocation=(self)"
+    }
+}
+

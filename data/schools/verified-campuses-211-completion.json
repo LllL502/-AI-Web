@@ -1,0 +1,14 @@
+{"schools":[
+{"school":"北京林业大学","source":"https://www.bjfu.edu.cn/","campuses":["校本部"]},
+{"school":"中国地质大学（北京）","source":"https://jxjy.cugb.edu.cn/engine2/d/38787380/3568849/0/2574001?p=443613&t=7475767","campuses":["校本部"]},
+{"school":"天津医科大学","source":"https://www.tmu.edu.cn/bkzs/main.htm","campuses":["气象台路校区","广东路校区"]},
+{"school":"东北农业大学","source":"https://sysxzx.neau.edu.cn/xnjd/jdjj.htm","campuses":["校本部"]},
+{"school":"东北林业大学","source":"https://yz.nefu.edu.cn/info/1026/4646.htm","campuses":["校本部"]},
+{"school":"华中农业大学","source":"https://news.hzau.edu.cn/info/1016/85558.htm","campuses":["狮子山校区","襄阳校区"]},
+{"school":"青海大学","source":"https://xxgk.qhu.edu.cn/docs/2023-01/529167fcc065446caf14f5249ba90fe3.pdf","campuses":["校本部"]},
+{"school":"石河子大学","source":"https://www.shzu.edu.cn/2026/0518/c2a232424/page.htm","campuses":["北区","中区","南区"]},
+{"school":"国防科技大学","create_school":true,"school_code":"nudt","source":"https://www.nudt.edu.cn/xwgg/tzgg/bd6dc7e5668e4c5887eabb8ce89b055d.htm","campuses":["长沙校区","南京校区"]},
+{"school":"国防科技大学","source":"https://www.nudt.edu.cn/zjkd/xysh/eac55ddad1164a8cacdaca5f4fda2362.htm","campuses":["武汉校区","合肥校区","西安校区"]},
+{"school":"海军军医大学","create_school":true,"school_code":"naval-medical","source":"https://www.smmu.edu.cn/423/list.htm","campuses":["校本部"]},
+{"school":"空军军医大学","create_school":true,"school_code":"air-force-medical","source":"https://www.fmmu.edu.cn/zhaosheng/info/1022/1477.htm","campuses":["校本部"]}
+]}

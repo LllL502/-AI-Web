@@ -1,0 +1,9 @@
+{
+  "page_viewport_combinations": 80,
+  "page_errors": 0,
+  "unexpected_request_errors": [],
+  "navigation_failures": [],
+  "intentional_horizontal_scroll": [
+    "/claims: mobile filter tabs"
+  ]
+}

@@ -1,0 +1,3081 @@
+{
+  "dataset_version": "assistant-fixed-v2",
+  "dataset_sha256": "f829f66f4e884f9bc215f51af8fff59839aa78265881ff05641467c88243af50",
+  "created_at": "2026-11-15T14:41:22.303916+00:00",
+  "synthetic_only": true,
+  "label_review": "partially_reviewed",
+  "embedding_model": "qwen3-embedding:0.6b",
+  "embedding_revision": "v1",
+  "model_key": "6526b74162eeeeb4b7fa81ecb8a1006f59d5e92a99ae22fe8b504674091dfd5b",
+  "weights": {
+    "text": 0.5,
+    "category": 0.15,
+    "location": 0.12,
+    "time": 0.1,
+    "color": 0.08,
+    "brand": 0.05
+  },
+  "conflict_penalties": {
+    "category": 0.25,
+    "color": 0.55,
+    "brand": 0.65,
+    "time": 0.35
+  },
+  "candidate_count": 16,
+  "eligible_candidate_count": 12,
+  "encoding_seconds": 1.687,
+  "total_seconds": 2.047,
+  "summary": {
+    "development": {
+      "keyword": {
+        "positive_queries": 8,
+        "no_answer_queries": 4,
+        "recall_at_1": 0.0,
+        "recall_at_3": 0.375,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 0.2833333333333333,
+        "no_answer_false_return_rate": 1.0
+      },
+      "semantic": {
+        "positive_queries": 8,
+        "no_answer_queries": 4,
+        "recall_at_1": 1.0,
+        "recall_at_3": 1.0,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 1.0,
+        "no_answer_false_return_rate": 1.0
+      },
+      "semantic_six_factor": {
+        "positive_queries": 8,
+        "no_answer_queries": 4,
+        "recall_at_1": 1.0,
+        "recall_at_3": 1.0,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 1.0,
+        "no_answer_false_return_rate": 1.0
+      }
+    }
+  },
+  "queries": [
+    {
+      "id": "d01",
+      "split": "development",
+      "scenario": "明确特征",
+      "gold": [
+        "c01"
+      ],
+      "rankings": {
+        "keyword": [
+          {
+            "id": "c08"
+          },
+          {
+            "id": "c04"
+          },
+          {
+            "id": "c02"
+          },
+          {
+            "id": "c09"
+          },
+          {
+            "id": "c01"
+          }
+        ],
+        "semantic": [
+          {
+            "id": "c01",
+            "score": 0.848785
+          },
+          {
+            "id": "c09",
+            "score": 0.577261
+          },
+          {
+            "id": "c02",
+            "score": 0.568907
+          },
+          {
+            "id": "c10",
+            "score": 0.446787
+          },
+          {
+            "id": "c08",
+            "score": 0.359408
+          }
+        ],
+        "semantic_six_factor": [
+          {
+            "id": "c01",
+            "score": 0.915991,
+            "base_score": 0.915991,
+            "coverage": 0.9,
+            "penalty_multiplier": 1.0,
+            "penalties": {},
+            "factors": {
+              "text": 0.848785,
+              "category": 1.0,
+              "location": 1.0,
+              "time": null,
+              "color": 1.0,
+              "brand": 1.0
+            },
+            "effective_weights": {
+              "text": 0.5555555555555556,
+              "category": 0.16666666666666666,
+              "location": 0.13333333333333333,
+              "time": 0,
+              "color": 0.08888888888888889,
+              "brand": 0.05555555555555556
+            },
+            "conflicts": [],
+            "missing_factors": [
+              "time"
+            ],
+            "explanations": [
+              "类别证据相符",
+              "地点证据相符",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌证据相符"
+            ]
+          },
+          {
+            "id": "c02",
+            "score": 0.172575,
+            "base_score": 0.482726,
+            "coverage": 0.9,
+            "penalty_multiplier": 0.3575,
+            "penalties": {
+              "color": 0.55,
+              "brand": 0.65
+            },
+            "factors": {
+              "text": 0.568907,
+              "category": 1.0,
+              "location": 0.0,
+              "time": null,
+              "color": 0.0,
+              "brand": 0.0
+            },
+            "effective_weights": {
+              "text": 0.5555555555555556,
+              "category": 0.16666666666666666,
+              "location": 0.13333333333333333,
+              "time": 0,
+              "color": 0.08888888888888889,
+              "brand": 0.05555555555555556
+            },
+            "conflicts": [
+              "候选地点均不同",
+              "颜色已知不同",
+              "品牌已知不同"
+            ],
+            "missing_factors": [
+              "time"
+            ],
+            "explanations": [
+              "类别证据相符",
+              "候选地点均不同，已降分",
+              "时间信息不足，未参与评分",
+              "颜色已知不同，已降分",
+              "品牌已知不同，已降分"
+            ]
+          },
+          {
+            "id": "c09",
+            "score": 0.116286,
+            "base_score": 0.465145,
+            "coverage": 0.9,
+            "penalty_multiplier": 0.25,
+            "penalties": {
+              "category": 0.25
+            },
+            "factors": {
+              "text": 0.577261,
+              "category": 0,
+              "location": 0.0,
+              "time": null,
+              "color": 1.0,
+              "brand": 1.0
+            },
+            "effective_weights": {
+              "text": 0.5555555555555556,
+              "category": 0.16666666666666666,
+              "location": 0.13333333333333333,
+              "time": 0,
+              "color": 0.08888888888888889,
+              "brand": 0.05555555555555556
+            },
+            "conflicts": [
+              "类别已知不同",
+              "候选地点均不同"
+            ],
+            "missing_factors": [
+              "time"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "候选地点均不同，已降分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌证据相符"
+            ]
+          },
+          {
+            "id": "c08",
+            "score": 0.076384,
+            "base_score": 0.305534,
+            "coverage": 0.85,
+            "penalty_multiplier": 0.25,
+            "penalties": {
+              "category": 0.25
+            },
+            "factors": {
+              "text": 0.359408,
+              "category": 0,
+              "location": 0.0,
+              "time": null,
+              "color": 1.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.5882352941176471,
+              "category": 0.17647058823529413,
+              "location": 0.1411764705882353,
+              "time": 0,
+              "color": 0.09411764705882353,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同",
+              "候选地点均不同"
+            ],
+            "missing_factors": [
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "候选地点均不同，已降分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c04",
+            "score": 0.071191,
+            "base_score": 0.284764,
+            "coverage": 0.85,
+            "penalty_multiplier": 0.25,
+            "penalties": {
+              "category": 0.25
+            },
+            "factors": {
+              "text": 0.324099,
+              "category": 0,
+              "location": 0.0,
+              "time": null,
+              "color": 1.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.5882352941176471,
+              "category": 0.17647058823529413,
+              "location": 0.1411764705882353,
+              "time": 0,
+              "color": 0.09411764705882353,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同",
+              "候选地点均不同"
+            ],
+            "missing_factors": [
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "候选地点均不同，已降分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌信息不足，未参与评分"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "d02",
+      "split": "development",
+      "scenario": "同义表达",
+      "gold": [
+        "c01"
+      ],
+      "rankings": {
+        "keyword": [
+          {
+            "id": "c08"
+          },
+          {
+            "id": "c04"
+          },
+          {
+            "id": "c02"
+          },
+          {
+            "id": "c09"
+          },
+          {
+            "id": "c01"
+          }
+        ],
+        "semantic": [
+          {
+            "id": "c01",
+            "score": 0.72714
+          },
+          {
+            "id": "c02",
+            "score": 0.574893
+          },
+          {
+            "id": "c08",
+            "score": 0.443114
+          },
+          {
+            "id": "c07",
+            "score": 0.386223
+          },
+          {
+            "id": "c09",
+            "score": 0.382947
+          }
+        ],
+        "semantic_six_factor": [
+          {
+            "id": "c01",
+            "score": 0.81311,
+            "base_score": 0.81311,
+            "coverage": 0.73,
+            "penalty_multiplier": 1.0,
+            "penalties": {},
+            "factors": {
+              "text": 0.72714,
+              "category": 1.0,
+              "location": null,
+              "time": null,
+              "color": 1.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别证据相符",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c02",
+            "score": 0.329583,
+            "base_score": 0.599242,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.55,
+            "penalties": {
+              "color": 0.55
+            },
+            "factors": {
+              "text": 0.574893,
+              "category": 1.0,
+              "location": null,
+              "time": null,
+              "color": 0.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "颜色已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别证据相符",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色已知不同，已降分",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c08",
+            "score": 0.103273,
+            "base_score": 0.413092,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.25,
+            "penalties": {
+              "category": 0.25
+            },
+            "factors": {
+              "text": 0.443114,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 1.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c09",
+            "score": 0.09297,
+            "base_score": 0.371881,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.25,
+            "penalties": {
+              "category": 0.25
+            },
+            "factors": {
+              "text": 0.382947,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 1.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c04",
+            "score": 0.086069,
+            "base_score": 0.344276,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.25,
+            "penalties": {
+              "category": 0.25
+            },
+            "factors": {
+              "text": 0.342642,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 1.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌信息不足，未参与评分"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "d03",
+      "split": "development",
+      "scenario": "颜色冲突",
+      "gold": [
+        "c03"
+      ],
+      "rankings": {
+        "keyword": [
+          {
+            "id": "c10"
+          },
+          {
+            "id": "c04"
+          },
+          {
+            "id": "c11"
+          },
+          {
+            "id": "c03"
+          }
+        ],
+        "semantic": [
+          {
+            "id": "c03",
+            "score": 0.941292
+          },
+          {
+            "id": "c04",
+            "score": 0.660434
+          },
+          {
+            "id": "c11",
+            "score": 0.371623
+          },
+          {
+            "id": "c10",
+            "score": 0.30701
+          },
+          {
+            "id": "c07",
+            "score": 0.297602
+          }
+        ],
+        "semantic_six_factor": [
+          {
+            "id": "c03",
+            "score": 0.962367,
+            "base_score": 0.962367,
+            "coverage": 0.78,
+            "penalty_multiplier": 1.0,
+            "penalties": {},
+            "factors": {
+              "text": 0.941292,
+              "category": 1.0,
+              "location": null,
+              "time": null,
+              "color": 1.0,
+              "brand": 1.0
+            },
+            "effective_weights": {
+              "text": 0.641025641025641,
+              "category": 0.1923076923076923,
+              "location": 0,
+              "time": 0,
+              "color": 0.10256410256410256,
+              "brand": 0.06410256410256411
+            },
+            "conflicts": [],
+            "missing_factors": [
+              "location",
+              "time"
+            ],
+            "explanations": [
+              "类别证据相符",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌证据相符"
+            ]
+          },
+          {
+            "id": "c04",
+            "score": 0.361807,
+            "base_score": 0.657832,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.55,
+            "penalties": {
+              "color": 0.55
+            },
+            "factors": {
+              "text": 0.660434,
+              "category": 1.0,
+              "location": null,
+              "time": null,
+              "color": 0.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "颜色已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别证据相符",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色已知不同，已降分",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c11",
+            "score": 0.091031,
+            "base_score": 0.364125,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.25,
+            "penalties": {
+              "category": 0.25
+            },
+            "factors": {
+              "text": 0.371623,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 1.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c07",
+            "score": 0.028028,
+            "base_score": 0.203837,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.1375,
+            "penalties": {
+              "category": 0.25,
+              "color": 0.55
+            },
+            "factors": {
+              "text": 0.297602,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 0.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同",
+              "颜色已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色已知不同，已降分",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c08",
+            "score": 0.026121,
+            "base_score": 0.189971,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.1375,
+            "penalties": {
+              "category": 0.25,
+              "color": 0.55
+            },
+            "factors": {
+              "text": 0.277358,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 0.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同",
+              "颜色已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色已知不同，已降分",
+              "品牌信息不足，未参与评分"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "d04",
+      "split": "development",
+      "scenario": "同义表达",
+      "gold": [
+        "c05"
+      ],
+      "rankings": {
+        "keyword": [
+          {
+            "id": "c10"
+          },
+          {
+            "id": "c06"
+          },
+          {
+            "id": "c07"
+          },
+          {
+            "id": "c05"
+          }
+        ],
+        "semantic": [
+          {
+            "id": "c05",
+            "score": 0.716446
+          },
+          {
+            "id": "c06",
+            "score": 0.588037
+          },
+          {
+            "id": "c07",
+            "score": 0.456647
+          },
+          {
+            "id": "c10",
+            "score": 0.406182
+          },
+          {
+            "id": "c02",
+            "score": 0.34237
+          }
+        ],
+        "semantic_six_factor": [
+          {
+            "id": "c05",
+            "score": 0.805785,
+            "base_score": 0.805785,
+            "coverage": 0.73,
+            "penalty_multiplier": 1.0,
+            "penalties": {},
+            "factors": {
+              "text": 0.716446,
+              "category": 1.0,
+              "location": null,
+              "time": null,
+              "color": 1.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别证据相符",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c06",
+            "score": 0.334535,
+            "base_score": 0.608245,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.55,
+            "penalties": {
+              "color": 0.55
+            },
+            "factors": {
+              "text": 0.588037,
+              "category": 1.0,
+              "location": null,
+              "time": null,
+              "color": 0.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "颜色已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别证据相符",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色已知不同，已降分",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c07",
+            "score": 0.10559,
+            "base_score": 0.422361,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.25,
+            "penalties": {
+              "category": 0.25
+            },
+            "factors": {
+              "text": 0.456647,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 1.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c10",
+            "score": 0.096949,
+            "base_score": 0.387796,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.25,
+            "penalties": {
+              "category": 0.25
+            },
+            "factors": {
+              "text": 0.406182,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 1.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c02",
+            "score": 0.032244,
+            "base_score": 0.2345,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.1375,
+            "penalties": {
+              "category": 0.25,
+              "color": 0.55
+            },
+            "factors": {
+              "text": 0.34237,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 0.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同",
+              "颜色已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色已知不同，已降分",
+              "品牌信息不足，未参与评分"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "d05",
+      "split": "development",
+      "scenario": "外观细节",
+      "gold": [
+        "c07"
+      ],
+      "rankings": {
+        "keyword": [
+          {
+            "id": "c10"
+          },
+          {
+            "id": "c08"
+          },
+          {
+            "id": "c07"
+          },
+          {
+            "id": "c05"
+          }
+        ],
+        "semantic": [
+          {
+            "id": "c07",
+            "score": 0.884902
+          },
+          {
+            "id": "c08",
+            "score": 0.588958
+          },
+          {
+            "id": "c06",
+            "score": 0.333358
+          },
+          {
+            "id": "c05",
+            "score": 0.301484
+          },
+          {
+            "id": "c10",
+            "score": 0.299289
+          }
+        ],
+        "semantic_six_factor": [
+          {
+            "id": "c07",
+            "score": 0.921166,
+            "base_score": 0.921166,
+            "coverage": 0.73,
+            "penalty_multiplier": 1.0,
+            "penalties": {},
+            "factors": {
+              "text": 0.884902,
+              "category": 1.0,
+              "location": null,
+              "time": null,
+              "color": 1.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别证据相符",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c08",
+            "score": 0.334881,
+            "base_score": 0.608875,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.55,
+            "penalties": {
+              "color": 0.55
+            },
+            "factors": {
+              "text": 0.588958,
+              "category": 1.0,
+              "location": null,
+              "time": null,
+              "color": 0.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "颜色已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别证据相符",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色已知不同，已降分",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c05",
+            "score": 0.079021,
+            "base_score": 0.316085,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.25,
+            "penalties": {
+              "category": 0.25
+            },
+            "factors": {
+              "text": 0.301484,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 1.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c10",
+            "score": 0.078645,
+            "base_score": 0.314581,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.25,
+            "penalties": {
+              "category": 0.25
+            },
+            "factors": {
+              "text": 0.299289,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 1.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c06",
+            "score": 0.031395,
+            "base_score": 0.228327,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.1375,
+            "penalties": {
+              "category": 0.25,
+              "color": 0.55
+            },
+            "factors": {
+              "text": 0.333358,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 0.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同",
+              "颜色已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色已知不同，已降分",
+              "品牌信息不足，未参与评分"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "d06",
+      "split": "development",
+      "scenario": "品牌冲突",
+      "gold": [
+        "c09"
+      ],
+      "rankings": {
+        "keyword": [
+          {
+            "id": "c10"
+          },
+          {
+            "id": "c08"
+          },
+          {
+            "id": "c04"
+          },
+          {
+            "id": "c02"
+          },
+          {
+            "id": "c09"
+          }
+        ],
+        "semantic": [
+          {
+            "id": "c09",
+            "score": 0.900273
+          },
+          {
+            "id": "c01",
+            "score": 0.559045
+          },
+          {
+            "id": "c02",
+            "score": 0.457599
+          },
+          {
+            "id": "c10",
+            "score": 0.417774
+          },
+          {
+            "id": "c04",
+            "score": 0.409666
+          }
+        ],
+        "semantic_six_factor": [
+          {
+            "id": "c09",
+            "score": 0.936073,
+            "base_score": 0.936073,
+            "coverage": 0.78,
+            "penalty_multiplier": 1.0,
+            "penalties": {},
+            "factors": {
+              "text": 0.900273,
+              "category": 1.0,
+              "location": null,
+              "time": null,
+              "color": 1.0,
+              "brand": 1.0
+            },
+            "effective_weights": {
+              "text": 0.641025641025641,
+              "category": 0.1923076923076923,
+              "location": 0,
+              "time": 0,
+              "color": 0.10256410256410256,
+              "brand": 0.06410256410256411
+            },
+            "conflicts": [],
+            "missing_factors": [
+              "location",
+              "time"
+            ],
+            "explanations": [
+              "类别证据相符",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌证据相符"
+            ]
+          },
+          {
+            "id": "c10",
+            "score": 0.16449,
+            "base_score": 0.460112,
+            "coverage": 0.78,
+            "penalty_multiplier": 0.3575,
+            "penalties": {
+              "color": 0.55,
+              "brand": 0.65
+            },
+            "factors": {
+              "text": 0.417774,
+              "category": 1.0,
+              "location": null,
+              "time": null,
+              "color": 0.0,
+              "brand": 0.0
+            },
+            "effective_weights": {
+              "text": 0.641025641025641,
+              "category": 0.1923076923076923,
+              "location": 0,
+              "time": 0,
+              "color": 0.10256410256410256,
+              "brand": 0.06410256410256411
+            },
+            "conflicts": [
+              "颜色已知不同",
+              "品牌已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time"
+            ],
+            "explanations": [
+              "类别证据相符",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色已知不同，已降分",
+              "品牌已知不同，已降分"
+            ]
+          },
+          {
+            "id": "c01",
+            "score": 0.131257,
+            "base_score": 0.525029,
+            "coverage": 0.78,
+            "penalty_multiplier": 0.25,
+            "penalties": {
+              "category": 0.25
+            },
+            "factors": {
+              "text": 0.559045,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 1.0,
+              "brand": 1.0
+            },
+            "effective_weights": {
+              "text": 0.641025641025641,
+              "category": 0.1923076923076923,
+              "location": 0,
+              "time": 0,
+              "color": 0.10256410256410256,
+              "brand": 0.06410256410256411
+            },
+            "conflicts": [
+              "类别已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌证据相符"
+            ]
+          },
+          {
+            "id": "c04",
+            "score": 0.097545,
+            "base_score": 0.390182,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.25,
+            "penalties": {
+              "category": 0.25
+            },
+            "factors": {
+              "text": 0.409666,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 1.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c08",
+            "score": 0.090282,
+            "base_score": 0.361127,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.25,
+            "penalties": {
+              "category": 0.25
+            },
+            "factors": {
+              "text": 0.367245,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 1.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌信息不足，未参与评分"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "d07",
+      "split": "development",
+      "scenario": "缺失字段",
+      "gold": [
+        "c11"
+      ],
+      "rankings": {
+        "keyword": [
+          {
+            "id": "c12"
+          },
+          {
+            "id": "c11"
+          }
+        ],
+        "semantic": [
+          {
+            "id": "c11",
+            "score": 0.708459
+          },
+          {
+            "id": "c12",
+            "score": 0.520447
+          },
+          {
+            "id": "c10",
+            "score": 0.320584
+          },
+          {
+            "id": "c05",
+            "score": 0.310399
+          },
+          {
+            "id": "c07",
+            "score": 0.259354
+          }
+        ],
+        "semantic_six_factor": [
+          {
+            "id": "c11",
+            "score": 0.708459,
+            "base_score": 0.708459,
+            "coverage": 0.5,
+            "penalty_multiplier": 1.0,
+            "penalties": {},
+            "factors": {
+              "text": 0.708459,
+              "category": null,
+              "location": null,
+              "time": null,
+              "color": null,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 1.0,
+              "category": 0,
+              "location": 0,
+              "time": 0,
+              "color": 0,
+              "brand": 0
+            },
+            "conflicts": [],
+            "missing_factors": [
+              "category",
+              "location",
+              "time",
+              "color",
+              "brand"
+            ],
+            "explanations": [
+              "类别信息不足，未参与评分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色信息不足，未参与评分",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c12",
+            "score": 0.520447,
+            "base_score": 0.520447,
+            "coverage": 0.5,
+            "penalty_multiplier": 1.0,
+            "penalties": {},
+            "factors": {
+              "text": 0.520447,
+              "category": null,
+              "location": null,
+              "time": null,
+              "color": null,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 1.0,
+              "category": 0,
+              "location": 0,
+              "time": 0,
+              "color": 0,
+              "brand": 0
+            },
+            "conflicts": [],
+            "missing_factors": [
+              "category",
+              "location",
+              "time",
+              "color",
+              "brand"
+            ],
+            "explanations": [
+              "类别信息不足，未参与评分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色信息不足，未参与评分",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c10",
+            "score": 0.320584,
+            "base_score": 0.320584,
+            "coverage": 0.5,
+            "penalty_multiplier": 1.0,
+            "penalties": {},
+            "factors": {
+              "text": 0.320584,
+              "category": null,
+              "location": null,
+              "time": null,
+              "color": null,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 1.0,
+              "category": 0,
+              "location": 0,
+              "time": 0,
+              "color": 0,
+              "brand": 0
+            },
+            "conflicts": [],
+            "missing_factors": [
+              "category",
+              "location",
+              "time",
+              "color",
+              "brand"
+            ],
+            "explanations": [
+              "类别信息不足，未参与评分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色信息不足，未参与评分",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c05",
+            "score": 0.310399,
+            "base_score": 0.310399,
+            "coverage": 0.5,
+            "penalty_multiplier": 1.0,
+            "penalties": {},
+            "factors": {
+              "text": 0.310399,
+              "category": null,
+              "location": null,
+              "time": null,
+              "color": null,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 1.0,
+              "category": 0,
+              "location": 0,
+              "time": 0,
+              "color": 0,
+              "brand": 0
+            },
+            "conflicts": [],
+            "missing_factors": [
+              "category",
+              "location",
+              "time",
+              "color",
+              "brand"
+            ],
+            "explanations": [
+              "类别信息不足，未参与评分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色信息不足，未参与评分",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c07",
+            "score": 0.259354,
+            "base_score": 0.259354,
+            "coverage": 0.5,
+            "penalty_multiplier": 1.0,
+            "penalties": {},
+            "factors": {
+              "text": 0.259354,
+              "category": null,
+              "location": null,
+              "time": null,
+              "color": null,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 1.0,
+              "category": 0,
+              "location": 0,
+              "time": 0,
+              "color": 0,
+              "brand": 0
+            },
+            "conflicts": [],
+            "missing_factors": [
+              "category",
+              "location",
+              "time",
+              "color",
+              "brand"
+            ],
+            "explanations": [
+              "类别信息不足，未参与评分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色信息不足，未参与评分",
+              "品牌信息不足，未参与评分"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "d08",
+      "split": "development",
+      "scenario": "无颜色",
+      "gold": [
+        "c05"
+      ],
+      "rankings": {
+        "keyword": [
+          {
+            "id": "c08"
+          },
+          {
+            "id": "c06"
+          },
+          {
+            "id": "c05"
+          }
+        ],
+        "semantic": [
+          {
+            "id": "c05",
+            "score": 0.83819
+          },
+          {
+            "id": "c06",
+            "score": 0.465551
+          },
+          {
+            "id": "c10",
+            "score": 0.270303
+          },
+          {
+            "id": "c01",
+            "score": 0.251365
+          },
+          {
+            "id": "c04",
+            "score": 0.236588
+          }
+        ],
+        "semantic_six_factor": [
+          {
+            "id": "c05",
+            "score": 0.884421,
+            "base_score": 0.884421,
+            "coverage": 0.7,
+            "penalty_multiplier": 1.0,
+            "penalties": {},
+            "factors": {
+              "text": 0.83819,
+              "category": 1.0,
+              "location": null,
+              "time": null,
+              "color": null,
+              "brand": 1.0
+            },
+            "effective_weights": {
+              "text": 0.7142857142857143,
+              "category": 0.2142857142857143,
+              "location": 0,
+              "time": 0,
+              "color": 0,
+              "brand": 0.07142857142857144
+            },
+            "conflicts": [],
+            "missing_factors": [
+              "location",
+              "time",
+              "color"
+            ],
+            "explanations": [
+              "类别证据相符",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色信息不足，未参与评分",
+              "品牌证据相符"
+            ]
+          },
+          {
+            "id": "c06",
+            "score": 0.355434,
+            "base_score": 0.546822,
+            "coverage": 0.7,
+            "penalty_multiplier": 0.65,
+            "penalties": {
+              "brand": 0.65
+            },
+            "factors": {
+              "text": 0.465551,
+              "category": 1.0,
+              "location": null,
+              "time": null,
+              "color": null,
+              "brand": 0.0
+            },
+            "effective_weights": {
+              "text": 0.7142857142857143,
+              "category": 0.2142857142857143,
+              "location": 0,
+              "time": 0,
+              "color": 0,
+              "brand": 0.07142857142857144
+            },
+            "conflicts": [
+              "品牌已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "color"
+            ],
+            "explanations": [
+              "类别证据相符",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色信息不足，未参与评分",
+              "品牌已知不同，已降分"
+            ]
+          },
+          {
+            "id": "c04",
+            "score": 0.045498,
+            "base_score": 0.181991,
+            "coverage": 0.65,
+            "penalty_multiplier": 0.25,
+            "penalties": {
+              "category": 0.25
+            },
+            "factors": {
+              "text": 0.236588,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": null,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.7692307692307692,
+              "category": 0.23076923076923075,
+              "location": 0,
+              "time": 0,
+              "color": 0,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "color",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色信息不足，未参与评分",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c07",
+            "score": 0.040199,
+            "base_score": 0.160795,
+            "coverage": 0.65,
+            "penalty_multiplier": 0.25,
+            "penalties": {
+              "category": 0.25
+            },
+            "factors": {
+              "text": 0.209034,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": null,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.7692307692307692,
+              "category": 0.23076923076923075,
+              "location": 0,
+              "time": 0,
+              "color": 0,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "color",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色信息不足，未参与评分",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c11",
+            "score": 0.037055,
+            "base_score": 0.148219,
+            "coverage": 0.65,
+            "penalty_multiplier": 0.25,
+            "penalties": {
+              "category": 0.25
+            },
+            "factors": {
+              "text": 0.192685,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": null,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.7692307692307692,
+              "category": 0.23076923076923075,
+              "location": 0,
+              "time": 0,
+              "color": 0,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "color",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色信息不足，未参与评分",
+              "品牌信息不足，未参与评分"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "d09",
+      "split": "development",
+      "scenario": "未审核隔离",
+      "gold": [],
+      "rankings": {
+        "keyword": [
+          {
+            "id": "c12"
+          },
+          {
+            "id": "c08"
+          },
+          {
+            "id": "c07"
+          }
+        ],
+        "semantic": [
+          {
+            "id": "c12",
+            "score": 0.532332
+          },
+          {
+            "id": "c07",
+            "score": 0.472972
+          },
+          {
+            "id": "c08",
+            "score": 0.400731
+          },
+          {
+            "id": "c06",
+            "score": 0.318357
+          },
+          {
+            "id": "c11",
+            "score": 0.306568
+          }
+        ],
+        "semantic_six_factor": [
+          {
+            "id": "c12",
+            "score": 0.11855,
+            "base_score": 0.4742,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.25,
+            "penalties": {
+              "category": 0.25
+            },
+            "factors": {
+              "text": 0.532332,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 1.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c07",
+            "score": 0.044544,
+            "base_score": 0.323954,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.1375,
+            "penalties": {
+              "category": 0.25,
+              "color": 0.55
+            },
+            "factors": {
+              "text": 0.472972,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 0.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同",
+              "颜色已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色已知不同，已降分",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c08",
+            "score": 0.03774,
+            "base_score": 0.274473,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.1375,
+            "penalties": {
+              "category": 0.25,
+              "color": 0.55
+            },
+            "factors": {
+              "text": 0.400731,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 0.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同",
+              "颜色已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色已知不同，已降分",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c06",
+            "score": 0.029982,
+            "base_score": 0.218053,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.1375,
+            "penalties": {
+              "category": 0.25,
+              "color": 0.55
+            },
+            "factors": {
+              "text": 0.318357,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 0.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同",
+              "颜色已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色已知不同，已降分",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c11",
+            "score": 0.028872,
+            "base_score": 0.209978,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.1375,
+            "penalties": {
+              "category": 0.25,
+              "color": 0.55
+            },
+            "factors": {
+              "text": 0.306568,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 0.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同",
+              "颜色已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色已知不同，已降分",
+              "品牌信息不足，未参与评分"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "d10",
+      "split": "development",
+      "scenario": "无正确候选",
+      "gold": [],
+      "rankings": {
+        "keyword": [
+          {
+            "id": "c08"
+          },
+          {
+            "id": "c04"
+          },
+          {
+            "id": "c09"
+          },
+          {
+            "id": "c01"
+          }
+        ],
+        "semantic": [
+          {
+            "id": "c08",
+            "score": 0.543376
+          },
+          {
+            "id": "c01",
+            "score": 0.459124
+          },
+          {
+            "id": "c07",
+            "score": 0.431522
+          },
+          {
+            "id": "c04",
+            "score": 0.425433
+          },
+          {
+            "id": "c09",
+            "score": 0.405317
+          }
+        ],
+        "semantic_six_factor": [
+          {
+            "id": "c08",
+            "score": 0.120441,
+            "base_score": 0.481764,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.25,
+            "penalties": {
+              "category": 0.25
+            },
+            "factors": {
+              "text": 0.543376,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 1.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c01",
+            "score": 0.106014,
+            "base_score": 0.424057,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.25,
+            "penalties": {
+              "category": 0.25
+            },
+            "factors": {
+              "text": 0.459124,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 1.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c04",
+            "score": 0.100245,
+            "base_score": 0.400981,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.25,
+            "penalties": {
+              "category": 0.25
+            },
+            "factors": {
+              "text": 0.425433,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 1.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c09",
+            "score": 0.096801,
+            "base_score": 0.387203,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.25,
+            "penalties": {
+              "category": 0.25
+            },
+            "factors": {
+              "text": 0.405317,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 1.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色证据相符",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c07",
+            "score": 0.04064,
+            "base_score": 0.295563,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.1375,
+            "penalties": {
+              "category": 0.25,
+              "color": 0.55
+            },
+            "factors": {
+              "text": 0.431522,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 0.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同",
+              "颜色已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色已知不同，已降分",
+              "品牌信息不足，未参与评分"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "d11",
+      "split": "development",
+      "scenario": "时间冲突",
+      "gold": [],
+      "rankings": {
+        "keyword": [
+          {
+            "id": "c10"
+          },
+          {
+            "id": "c08"
+          },
+          {
+            "id": "c04"
+          },
+          {
+            "id": "c02"
+          },
+          {
+            "id": "c09"
+          }
+        ],
+        "semantic": [
+          {
+            "id": "c09",
+            "score": 0.793048
+          },
+          {
+            "id": "c01",
+            "score": 0.558308
+          },
+          {
+            "id": "c10",
+            "score": 0.469136
+          },
+          {
+            "id": "c02",
+            "score": 0.458406
+          },
+          {
+            "id": "c04",
+            "score": 0.38541
+          }
+        ],
+        "semantic_six_factor": [
+          {
+            "id": "c09",
+            "score": 0.269072,
+            "base_score": 0.768777,
+            "coverage": 0.88,
+            "penalty_multiplier": 0.35,
+            "penalties": {
+              "time": 0.35
+            },
+            "factors": {
+              "text": 0.793048,
+              "category": 1.0,
+              "location": null,
+              "time": 0.0,
+              "color": 1.0,
+              "brand": 1.0
+            },
+            "effective_weights": {
+              "text": 0.5681818181818182,
+              "category": 0.17045454545454544,
+              "location": 0,
+              "time": 0.11363636363636365,
+              "color": 0.09090909090909091,
+              "brand": 0.05681818181818182
+            },
+            "conflicts": [
+              "拾取时间早于遗失时间"
+            ],
+            "missing_factors": [
+              "location"
+            ],
+            "explanations": [
+              "类别证据相符",
+              "地点信息不足，未参与评分",
+              "拾取时间早于遗失时间，已降分",
+              "颜色证据相符",
+              "品牌证据相符"
+            ]
+          },
+          {
+            "id": "c10",
+            "score": 0.054681,
+            "base_score": 0.437009,
+            "coverage": 0.88,
+            "penalty_multiplier": 0.125125,
+            "penalties": {
+              "time": 0.35,
+              "color": 0.55,
+              "brand": 0.65
+            },
+            "factors": {
+              "text": 0.469136,
+              "category": 1.0,
+              "location": null,
+              "time": 0.0,
+              "color": 0.0,
+              "brand": 0.0
+            },
+            "effective_weights": {
+              "text": 0.5681818181818182,
+              "category": 0.17045454545454544,
+              "location": 0,
+              "time": 0.11363636363636365,
+              "color": 0.09090909090909091,
+              "brand": 0.05681818181818182
+            },
+            "conflicts": [
+              "拾取时间早于遗失时间",
+              "颜色已知不同",
+              "品牌已知不同"
+            ],
+            "missing_factors": [
+              "location"
+            ],
+            "explanations": [
+              "类别证据相符",
+              "地点信息不足，未参与评分",
+              "拾取时间早于遗失时间，已降分",
+              "颜色已知不同，已降分",
+              "品牌已知不同，已降分"
+            ]
+          },
+          {
+            "id": "c01",
+            "score": 0.040683,
+            "base_score": 0.464948,
+            "coverage": 0.88,
+            "penalty_multiplier": 0.0875,
+            "penalties": {
+              "category": 0.25,
+              "time": 0.35
+            },
+            "factors": {
+              "text": 0.558308,
+              "category": 0,
+              "location": null,
+              "time": 0.0,
+              "color": 1.0,
+              "brand": 1.0
+            },
+            "effective_weights": {
+              "text": 0.5681818181818182,
+              "category": 0.17045454545454544,
+              "location": 0,
+              "time": 0.11363636363636365,
+              "color": 0.09090909090909091,
+              "brand": 0.05681818181818182
+            },
+            "conflicts": [
+              "类别已知不同",
+              "拾取时间早于遗失时间"
+            ],
+            "missing_factors": [
+              "location"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "拾取时间早于遗失时间，已降分",
+              "颜色证据相符",
+              "品牌证据相符"
+            ]
+          },
+          {
+            "id": "c04",
+            "score": 0.028749,
+            "base_score": 0.32856,
+            "coverage": 0.83,
+            "penalty_multiplier": 0.0875,
+            "penalties": {
+              "category": 0.25,
+              "time": 0.35
+            },
+            "factors": {
+              "text": 0.38541,
+              "category": 0,
+              "location": null,
+              "time": 0.0,
+              "color": 1.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.6024096385542169,
+              "category": 0.18072289156626506,
+              "location": 0,
+              "time": 0.12048192771084339,
+              "color": 0.0963855421686747,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同",
+              "拾取时间早于遗失时间"
+            ],
+            "missing_factors": [
+              "location",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "拾取时间早于遗失时间，已降分",
+              "颜色证据相符",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c08",
+            "score": 0.028734,
+            "base_score": 0.328389,
+            "coverage": 0.83,
+            "penalty_multiplier": 0.0875,
+            "penalties": {
+              "category": 0.25,
+              "time": 0.35
+            },
+            "factors": {
+              "text": 0.385125,
+              "category": 0,
+              "location": null,
+              "time": 0.0,
+              "color": 1.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.6024096385542169,
+              "category": 0.18072289156626506,
+              "location": 0,
+              "time": 0.12048192771084339,
+              "color": 0.0963855421686747,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同",
+              "拾取时间早于遗失时间"
+            ],
+            "missing_factors": [
+              "location",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "拾取时间早于遗失时间，已降分",
+              "颜色证据相符",
+              "品牌信息不足，未参与评分"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "d12",
+      "split": "development",
+      "scenario": "同类不同物品",
+      "gold": [],
+      "rankings": {
+        "keyword": [
+          {
+            "id": "c12"
+          },
+          {
+            "id": "c08"
+          },
+          {
+            "id": "c02"
+          },
+          {
+            "id": "c07"
+          },
+          {
+            "id": "c01"
+          }
+        ],
+        "semantic": [
+          {
+            "id": "c02",
+            "score": 0.491273
+          },
+          {
+            "id": "c01",
+            "score": 0.444797
+          },
+          {
+            "id": "c07",
+            "score": 0.378843
+          },
+          {
+            "id": "c10",
+            "score": 0.360493
+          },
+          {
+            "id": "c04",
+            "score": 0.262267
+          }
+        ],
+        "semantic_six_factor": [
+          {
+            "id": "c02",
+            "score": 0.181333,
+            "base_score": 0.507226,
+            "coverage": 0.78,
+            "penalty_multiplier": 0.3575,
+            "penalties": {
+              "color": 0.55,
+              "brand": 0.65
+            },
+            "factors": {
+              "text": 0.491273,
+              "category": 1.0,
+              "location": null,
+              "time": null,
+              "color": 0.0,
+              "brand": 0.0
+            },
+            "effective_weights": {
+              "text": 0.641025641025641,
+              "category": 0.1923076923076923,
+              "location": 0,
+              "time": 0,
+              "color": 0.10256410256410256,
+              "brand": 0.06410256410256411
+            },
+            "conflicts": [
+              "颜色已知不同",
+              "品牌已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time"
+            ],
+            "explanations": [
+              "类别证据相符",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色已知不同，已降分",
+              "品牌已知不同，已降分"
+            ]
+          },
+          {
+            "id": "c01",
+            "score": 0.170683,
+            "base_score": 0.477434,
+            "coverage": 0.78,
+            "penalty_multiplier": 0.3575,
+            "penalties": {
+              "color": 0.55,
+              "brand": 0.65
+            },
+            "factors": {
+              "text": 0.444797,
+              "category": 1.0,
+              "location": null,
+              "time": null,
+              "color": 0.0,
+              "brand": 0.0
+            },
+            "effective_weights": {
+              "text": 0.641025641025641,
+              "category": 0.1923076923076923,
+              "location": 0,
+              "time": 0,
+              "color": 0.10256410256410256,
+              "brand": 0.06410256410256411
+            },
+            "conflicts": [
+              "颜色已知不同",
+              "品牌已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time"
+            ],
+            "explanations": [
+              "类别证据相符",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色已知不同，已降分",
+              "品牌已知不同，已降分"
+            ]
+          },
+          {
+            "id": "c07",
+            "score": 0.035679,
+            "base_score": 0.259482,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.1375,
+            "penalties": {
+              "category": 0.25,
+              "color": 0.55
+            },
+            "factors": {
+              "text": 0.378843,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 0.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同",
+              "颜色已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色已知不同，已降分",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c04",
+            "score": 0.0247,
+            "base_score": 0.179635,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.1375,
+            "penalties": {
+              "category": 0.25,
+              "color": 0.55
+            },
+            "factors": {
+              "text": 0.262267,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 0.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同",
+              "颜色已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色已知不同，已降分",
+              "品牌信息不足，未参与评分"
+            ]
+          },
+          {
+            "id": "c12",
+            "score": 0.023969,
+            "base_score": 0.174321,
+            "coverage": 0.73,
+            "penalty_multiplier": 0.1375,
+            "penalties": {
+              "category": 0.25,
+              "color": 0.55
+            },
+            "factors": {
+              "text": 0.254508,
+              "category": 0,
+              "location": null,
+              "time": null,
+              "color": 0.0,
+              "brand": null
+            },
+            "effective_weights": {
+              "text": 0.684931506849315,
+              "category": 0.2054794520547945,
+              "location": 0,
+              "time": 0,
+              "color": 0.10958904109589042,
+              "brand": 0
+            },
+            "conflicts": [
+              "类别已知不同",
+              "颜色已知不同"
+            ],
+            "missing_factors": [
+              "location",
+              "time",
+              "brand"
+            ],
+            "explanations": [
+              "类别已知不同，已降分",
+              "地点信息不足，未参与评分",
+              "时间信息不足，未参与评分",
+              "颜色已知不同，已降分",
+              "品牌信息不足，未参与评分"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

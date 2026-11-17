@@ -1,0 +1,43 @@
+import {expect,test} from '@playwright/test'
+import fs from 'node:fs/promises'
+test('ordinary wording, corrections and unusual appearance details remain conversational',async({page})=>{
+ test.skip(process.env.CAMPUSTRACE_REAL_LOCAL_AI!=='1','Requires local model')
+ test.setTimeout(240_000)
+ await page.goto('/login?redirect=/home')
+ await page.getByLabel('用户名',{exact:true}).fill('student_01')
+ await page.getByLabel('密码',{exact:true}).fill('CampusTrace!2026')
+ await page.getByRole('button',{name:'登录',exact:true}).click()
+ await page.locator('.agent-character').click()
+ const audit:any[]=[];let writes=0
+ page.on('request',r=>{if(r.url().includes('/assistant/agent/actions/')&&r.method()==='POST')writes++})
+ async function say(text:string){
+  const next=page.waitForResponse(r=>r.url().endsWith('/assistant/conversation/')&&r.request().method()==='POST',{timeout:100_000})
+  await page.getByLabel('告诉小寻你记得的情况').fill(text)
+  await page.getByRole('button',{name:'发送 ↑'}).click()
+  const r=await next;const body=await r.json();expect(r.status(),JSON.stringify(body.error)).toBe(200)
+  const d=body.data;audit.push({user:text,reply:d.reply,description:d.description,draft:d.draft,intent:d.intent})
+  await fs.writeFile('../artifacts/xun-dialogue-variants.json',JSON.stringify(audit,null,2))
+  await expect(page.locator('.chat-thinking')).toHaveCount(0)
+  await expect(page.locator('.chat-error')).toHaveCount(0)
+  return d
+ }
+ await say('嗨，小寻，在吗？')
+ const bag=await say('我好像把帆布袋落在学校了，米白色，袋子上有一只猫。')
+ expect(bag.description).toContain('袋')
+ const correction=await say('等等，刚才说错了，是米黄色，不是米白色。')
+ expect(correction.draft.colors.join('')).toContain('黄')
+ expect(correction.draft.colors.join('')).not.toContain('白')
+ const unknown=await say('具体在哪我真的想不起来，别再问这个了。')
+ expect(unknown.unavailable_fields).toContain('location')
+ await page.getByLabel('告诉小寻你记得的情况').fill('先别发布，我想继续找。')
+ await page.getByRole('button',{name:'发送 ↑'}).click()
+ await expect(page.locator('.agent-publication')).toHaveCount(0)
+ const detail=await say('还有一点，袋口打了个结，里面有一本练习册。')
+ expect(detail.description).toContain('结')
+ expect(detail.description).toContain('练习册')
+ expect(detail.draft.category_hint).toContain('袋')
+ const help=await say('我现在有点慌，没有照片也能找吗？')
+ expect(help.reply).toMatch(/可以|能|照片|文字/)
+ expect(writes).toBe(0)
+ await page.screenshot({path:'../artifacts/xun-dialogue-variants.png',fullPage:true})
+})

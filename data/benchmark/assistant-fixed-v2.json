@@ -1,0 +1,479 @@
+{
+  "version": "assistant-fixed-v2",
+  "provenance": "AI辅助构造、待参赛者复核标签的合成检索案例，不是真实校园记录或真实找回率；评测从给定确认字段开始，不评估LLM提取准确率。",
+  "campus": "benchmark-main",
+  "candidates": [
+    {
+      "id": "c01",
+      "kind": "FOUND",
+      "category": "耳机",
+      "color": "黑色",
+      "brand": "华为",
+      "location": "图书馆",
+      "time": "2026-01-03T10:00:00+08:00",
+      "text": "黑色无线入耳耳机，带充电盒，盒盖有一道划痕。"
+    },
+    {
+      "id": "c02",
+      "kind": "FOUND",
+      "category": "耳机",
+      "color": "白色",
+      "brand": "苹果",
+      "location": "食堂",
+      "time": "2026-01-04T10:00:00+08:00",
+      "text": "白色无线耳机与充电盒，盒子装有透明保护套。"
+    },
+    {
+      "id": "c03",
+      "kind": "FOUND",
+      "category": "雨伞",
+      "color": "蓝色",
+      "brand": "天堂",
+      "location": "教学楼",
+      "time": "2026-01-03T11:00:00+08:00",
+      "text": "蓝色三折雨伞，手柄带短挂绳。"
+    },
+    {
+      "id": "c04",
+      "kind": "FOUND",
+      "category": "雨伞",
+      "color": "黑色",
+      "brand": "",
+      "location": "体育馆",
+      "time": "2026-01-04T11:00:00+08:00",
+      "text": "黑色折叠伞，木质弯柄，伞套已不见。"
+    },
+    {
+      "id": "c05",
+      "kind": "FOUND",
+      "category": "水杯",
+      "color": "银色",
+      "brand": "膳魔师",
+      "location": "图书馆",
+      "time": "2026-01-03T12:00:00+08:00",
+      "text": "银色不锈钢保温杯，杯底有磕痕，杯身没有贴纸。"
+    },
+    {
+      "id": "c06",
+      "kind": "FOUND",
+      "category": "水杯",
+      "color": "粉色",
+      "brand": "乐扣",
+      "location": "操场",
+      "time": "2026-01-04T12:00:00+08:00",
+      "text": "粉色保温水杯，带提手，杯身有白色小兔贴纸。"
+    },
+    {
+      "id": "c07",
+      "kind": "FOUND",
+      "category": "钥匙",
+      "color": "银色",
+      "brand": "",
+      "location": "宿舍",
+      "time": "2026-01-03T13:00:00+08:00",
+      "text": "银色钥匙串，挂着绿色恐龙挂件。"
+    },
+    {
+      "id": "c08",
+      "kind": "FOUND",
+      "category": "钥匙",
+      "color": "黑色",
+      "brand": "",
+      "location": "教学楼",
+      "time": "2026-01-04T13:00:00+08:00",
+      "text": "黑色门禁钥匙，配有红色短挂绳，没有挂件。"
+    },
+    {
+      "id": "c09",
+      "kind": "FOUND",
+      "category": "手机",
+      "color": "黑色",
+      "brand": "华为",
+      "location": "食堂",
+      "time": "2026-01-03T14:00:00+08:00",
+      "text": "黑色华为手机，透明手机壳，后盖有圆形支架。"
+    },
+    {
+      "id": "c10",
+      "kind": "FOUND",
+      "category": "手机",
+      "color": "银色",
+      "brand": "苹果",
+      "location": "图书馆",
+      "time": "2026-01-04T14:00:00+08:00",
+      "text": "银色苹果手机，蓝色保护壳，屏幕边缘有裂纹。"
+    },
+    {
+      "id": "c11",
+      "kind": "FOUND",
+      "category": "书籍",
+      "color": "蓝色",
+      "brand": "",
+      "location": "教学楼",
+      "time": "2026-01-03T15:00:00+08:00",
+      "text": "蓝色封面的线性代数教材，书角折起，有课堂笔记。"
+    },
+    {
+      "id": "c12",
+      "kind": "FOUND",
+      "category": "书籍",
+      "color": "红色",
+      "brand": "",
+      "location": "宿舍",
+      "time": "2026-01-04T15:00:00+08:00",
+      "text": "红色大学英语教材，书脊贴有黄色标签。"
+    },
+    {
+      "id": "x01",
+      "kind": "FOUND",
+      "category": "校园卡",
+      "color": "红色",
+      "brand": "",
+      "location": "食堂",
+      "time": "2026-01-05T10:00:00+08:00",
+      "text": "红色校园卡放在恐龙卡套里。",
+      "review_status": "PENDING"
+    },
+    {
+      "id": "x02",
+      "kind": "FOUND",
+      "category": "文具",
+      "color": "蓝色",
+      "brand": "",
+      "location": "图书馆",
+      "time": "2026-01-05T11:00:00+08:00",
+      "text": "蓝色帆布笔袋，拉链上挂着白色星星。",
+      "campus": "benchmark-other"
+    },
+    {
+      "id": "x03",
+      "kind": "FOUND",
+      "category": "背包",
+      "color": "绿色",
+      "brand": "耐克",
+      "location": "操场",
+      "time": "2026-01-05T12:00:00+08:00",
+      "text": "绿色耐克双肩包，挂有橙色小熊。",
+      "business_status": "RETURNED"
+    },
+    {
+      "id": "x04",
+      "kind": "LOST",
+      "category": "充电宝",
+      "color": "白色",
+      "brand": "小米",
+      "location": "图书馆",
+      "time": "2026-01-05T13:00:00+08:00",
+      "text": "白色小米充电宝，贴有蓝色鲸鱼贴纸。"
+    }
+  ],
+  "queries": [
+    {
+      "id": "d01",
+      "split": "development",
+      "scenario": "明确特征",
+      "text": "图书馆丢失黑色华为耳机，盒盖有划痕。",
+      "category": "耳机",
+      "colors": [
+        "黑色"
+      ],
+      "brand": "华为",
+      "location": "图书馆",
+      "gold": [
+        "c01"
+      ]
+    },
+    {
+      "id": "d02",
+      "split": "development",
+      "scenario": "同义表达",
+      "text": "听音乐用的那对黑色入耳设备，收在一个有划痕的小盒子里。",
+      "category": "耳机",
+      "colors": [
+        "黑色"
+      ],
+      "gold": [
+        "c01"
+      ]
+    },
+    {
+      "id": "d03",
+      "split": "development",
+      "scenario": "颜色冲突",
+      "text": "蓝色天堂雨伞，三折的，手柄有短绳。",
+      "category": "雨伞",
+      "colors": [
+        "蓝色"
+      ],
+      "brand": "天堂",
+      "gold": [
+        "c03"
+      ]
+    },
+    {
+      "id": "d04",
+      "split": "development",
+      "scenario": "同义表达",
+      "text": "银色装热水的金属容器，能保温，底部磕了一块。",
+      "category": "水杯",
+      "colors": [
+        "银色"
+      ],
+      "gold": [
+        "c05"
+      ]
+    },
+    {
+      "id": "d05",
+      "split": "development",
+      "scenario": "外观细节",
+      "text": "一串银色钥匙，上面挂着绿色的小恐龙。",
+      "category": "钥匙",
+      "colors": [
+        "银色"
+      ],
+      "gold": [
+        "c07"
+      ]
+    },
+    {
+      "id": "d06",
+      "split": "development",
+      "scenario": "品牌冲突",
+      "text": "华为黑色手机，透明壳背面有圆形支架。",
+      "category": "手机",
+      "colors": [
+        "黑色"
+      ],
+      "brand": "华为",
+      "gold": [
+        "c09"
+      ]
+    },
+    {
+      "id": "d07",
+      "split": "development",
+      "scenario": "缺失字段",
+      "text": "线代课用的教材，角折起来了，里面写了笔记。",
+      "gold": [
+        "c11"
+      ]
+    },
+    {
+      "id": "d08",
+      "split": "development",
+      "scenario": "无颜色",
+      "text": "膳魔师保温杯，底部有磕痕，没有任何贴纸。",
+      "category": "水杯",
+      "brand": "膳魔师",
+      "gold": [
+        "c05"
+      ]
+    },
+    {
+      "id": "d09",
+      "split": "development",
+      "scenario": "未审核隔离",
+      "text": "红色校园卡，装在恐龙卡套里面。",
+      "category": "校园卡",
+      "colors": [
+        "红色"
+      ],
+      "gold": []
+    },
+    {
+      "id": "d10",
+      "split": "development",
+      "scenario": "无正确候选",
+      "text": "黑色U盘，尾部系着紫色短绳。",
+      "category": "U盘",
+      "colors": [
+        "黑色"
+      ],
+      "gold": []
+    },
+    {
+      "id": "d11",
+      "split": "development",
+      "scenario": "时间冲突",
+      "text": "1月5日遗失黑色华为手机，透明壳有圆形支架。",
+      "category": "手机",
+      "colors": [
+        "黑色"
+      ],
+      "brand": "华为",
+      "time": "2026-01-05T14:00:00+08:00",
+      "gold": []
+    },
+    {
+      "id": "d12",
+      "split": "development",
+      "scenario": "同类不同物品",
+      "text": "丢失绿色索尼耳机，有红色硅胶套。",
+      "category": "耳机",
+      "colors": [
+        "绿色"
+      ],
+      "brand": "索尼",
+      "gold": []
+    },
+    {
+      "id": "v01",
+      "split": "validation",
+      "scenario": "明确特征",
+      "text": "食堂遗失白色苹果无线耳机，盒子带透明套。",
+      "category": "耳机",
+      "colors": [
+        "白色"
+      ],
+      "brand": "苹果",
+      "location": "食堂",
+      "gold": [
+        "c02"
+      ]
+    },
+    {
+      "id": "v02",
+      "split": "validation",
+      "scenario": "同义表达",
+      "text": "塞在耳朵里听歌的白色小东西，放在带透明外套的充电盒里。",
+      "category": "耳机",
+      "colors": [
+        "白色"
+      ],
+      "gold": [
+        "c02"
+      ]
+    },
+    {
+      "id": "v03",
+      "split": "validation",
+      "scenario": "颜色冲突",
+      "text": "黑色折叠雨伞，木头弯手柄，没有伞套。",
+      "category": "雨伞",
+      "colors": [
+        "黑色"
+      ],
+      "gold": [
+        "c04"
+      ]
+    },
+    {
+      "id": "v04",
+      "split": "validation",
+      "scenario": "外观细节",
+      "text": "粉色带提手的保温杯，贴着白色小兔子。",
+      "category": "水杯",
+      "colors": [
+        "粉色"
+      ],
+      "gold": [
+        "c06"
+      ]
+    },
+    {
+      "id": "v05",
+      "split": "validation",
+      "scenario": "否定特征",
+      "text": "黑色门禁钥匙有红色短绳，没有挂件。",
+      "category": "钥匙",
+      "colors": [
+        "黑色"
+      ],
+      "gold": [
+        "c08"
+      ]
+    },
+    {
+      "id": "v06",
+      "split": "validation",
+      "scenario": "品牌冲突",
+      "text": "银色苹果手机装蓝色壳，屏幕边上裂了。",
+      "category": "手机",
+      "colors": [
+        "银色"
+      ],
+      "brand": "苹果",
+      "gold": [
+        "c10"
+      ]
+    },
+    {
+      "id": "v07",
+      "split": "validation",
+      "scenario": "缺失字段",
+      "text": "上英语课用的教材，书脊贴了黄色标签。",
+      "gold": [
+        "c12"
+      ]
+    },
+    {
+      "id": "v08",
+      "split": "validation",
+      "scenario": "无品牌",
+      "text": "红色大学英语书，书脊上有黄色贴纸。",
+      "category": "书籍",
+      "colors": [
+        "红色"
+      ],
+      "gold": [
+        "c12"
+      ]
+    },
+    {
+      "id": "v09",
+      "split": "validation",
+      "scenario": "跨校区隔离",
+      "text": "蓝色帆布笔袋，拉链上挂着白色星星。",
+      "category": "文具",
+      "colors": [
+        "蓝色"
+      ],
+      "gold": []
+    },
+    {
+      "id": "v10",
+      "split": "validation",
+      "scenario": "已归还隔离",
+      "text": "绿色耐克背包，挂着橙色小熊。",
+      "category": "背包",
+      "colors": [
+        "绿色"
+      ],
+      "brand": "耐克",
+      "gold": []
+    },
+    {
+      "id": "v11",
+      "split": "validation",
+      "scenario": "同类型隔离",
+      "text": "白色小米充电宝，贴着蓝色鲸鱼。",
+      "category": "充电宝",
+      "colors": [
+        "白色"
+      ],
+      "brand": "小米",
+      "gold": []
+    },
+    {
+      "id": "v12",
+      "split": "validation",
+      "scenario": "无正确候选",
+      "text": "棕色皮质钱包，内侧有月亮图案。",
+      "category": "钱包",
+      "colors": [
+        "棕色"
+      ],
+      "gold": []
+    }
+  ],
+  "review": {
+    "status": "partially_reviewed",
+    "source": "参赛者反馈：v09相机、v11电脑、d10小提琴不符合常见校园失物场景。已替换；其余标签仍待复核。",
+    "changes": [
+      "d10改为U盘，保留无对应候选条件",
+      "x02/v09改为笔袋，保留跨校区隔离条件",
+      "x04/v11改为充电宝，保留同为遗失信息的隔离条件"
+    ]
+  }
+}

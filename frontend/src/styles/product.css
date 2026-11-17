@@ -1,0 +1,66 @@
+/* Product-wide navigation and surfaces for the approved blue-and-white direction. */
+.app-shell{min-height:100vh;background:#f7f9fc}
+.app-shell .topbar{position:sticky;z-index:40;top:0;display:grid;grid-template-columns:minmax(230px,auto) minmax(0,1fr) auto;gap:clamp(16px,2.4vw,34px);align-items:center;min-height:68px;padding:0 clamp(20px,4vw,58px);border-bottom:1px solid #e7edf5;background:rgba(255,255,255,.97);box-shadow:0 2px 10px rgba(31,60,99,.025);backdrop-filter:blur(18px)}
+.app-shell .brand{display:flex;align-items:center;gap:9px;min-width:0;color:#172b47;white-space:nowrap}
+.app-shell .brand-mark{display:grid;place-items:center;width:35px;height:35px;border:0;border-radius:50%;background:#e9f2ff;color:#2374ed;font-size:21px}
+.app-shell .brand-name{font:850 25px/1 system-ui,"Microsoft YaHei",sans-serif;letter-spacing:-1.2px}
+.app-shell .brand-subtitle{margin-left:5px;padding-left:12px;border-left:1px solid #dce4ef;color:#75849a;font-size:12px;font-weight:500}
+.app-shell .primary-nav{display:flex;align-items:center;justify-content:center;gap:clamp(16px,2.4vw,38px);min-width:0;color:#43546d;font-size:14px;font-weight:650;white-space:nowrap}
+.app-shell .primary-nav a{position:relative;padding:25px 0 23px;transition:color .15s ease}
+.app-shell .primary-nav a:hover,.app-shell .primary-nav a.router-link-active{color:#1767df}
+.app-shell .primary-nav a.router-link-active::after{position:absolute;right:0;bottom:13px;left:0;height:3px;border-radius:3px;background:#2674ef;content:""}
+.app-shell .topbar-actions{display:flex;align-items:center;justify-self:end;gap:12px;min-width:0}
+.app-shell .campus-trigger{max-width:145px;overflow:hidden;padding:8px 10px;border:1px solid #e5ebf3;border-radius:18px;background:#fff;color:#60718a;font-size:11px;text-overflow:ellipsis;white-space:nowrap;cursor:pointer}
+.app-shell .icon-button.notification-button{display:grid;place-items:center;width:36px;height:36px;min-height:36px;border:0;border-radius:50%;background:#f5f8fd;color:#50627d}
+.app-shell .account-menu>summary{display:flex;align-items:center;gap:8px;min-height:38px;padding:0 8px 0 0;border:0;background:transparent;color:#263951;cursor:pointer}
+.app-shell .account-avatar{display:grid;place-items:center;width:32px;height:32px;border:2px solid #fff;border-radius:50%;background:linear-gradient(145deg,#dcecff,#b9d5ff);color:#2866bf;font-size:13px;font-weight:800;box-shadow:0 0 0 1px #d8e6f8}
+.app-shell .account-name{max-width:92px;overflow:hidden;color:#334760;font-size:13px;font-weight:650;text-overflow:ellipsis;white-space:nowrap}
+.app-shell .account-chevron{color:#8492a5;font-size:13px}
+.app-shell .account-menu[open]>summary{color:#1767df}
+.app-shell .account-menu>nav{top:calc(100% + 12px);width:230px;border:1px solid #e6edf6;border-radius:15px;background:#fff;box-shadow:0 16px 38px rgba(27,55,94,.13)}
+.app-shell .account-menu>nav a{padding:11px 12px;border-radius:10px}
+.app-shell .account-menu>nav a:hover{background:#f2f7ff;color:#1767df}
+.app-shell .account-menu>nav small{color:#8795a9}
+.app-shell .account-menu>nav button{border-top:1px solid #edf1f6}
+.app-shell .login-link{padding:9px 14px;border:1px solid #dce8f8;border-radius:18px;background:#f8fbff;color:#246bd8;font-size:12px;font-weight:700;white-space:nowrap}
+.app-shell .site-footer{max-width:1360px;color:#8290a3;border-color:#e6edf5}
+.app-shell .site-footer strong{color:#263c5b}
+@media(max-width:1100px){.app-shell .topbar{grid-template-columns:auto 1fr;gap:10px 20px;padding-inline:22px}.app-shell .primary-nav{grid-column:1/-1;grid-row:2;justify-content:flex-start;gap:28px;overflow-x:auto;scrollbar-width:none}.app-shell .primary-nav::-webkit-scrollbar{display:none}.app-shell .primary-nav a{padding:9px 0 12px}.app-shell .primary-nav a.router-link-active::after{bottom:4px}.app-shell .topbar{padding-block:7px}.app-shell .brand{grid-column:1;grid-row:1}.app-shell .topbar-actions{grid-column:2;grid-row:1}}
+@media(max-width:620px){.app-shell .topbar{grid-template-columns:minmax(0,1fr) auto;gap:0 10px;padding:7px 14px}.app-shell .brand-name{font-size:23px}.app-shell .brand-subtitle{font-size:10px;padding-left:8px;margin-left:1px}.app-shell .brand-mark{width:31px;height:31px;font-size:18px}.app-shell .topbar-actions{gap:7px}.app-shell .campus-trigger{max-width:94px;padding:7px 8px;font-size:9px}.app-shell .account-name,.app-shell .account-chevron{display:none}.app-shell .primary-nav{gap:23px;margin-top:4px;font-size:12px}.app-shell .primary-nav a{padding:8px 0 10px}.app-shell .site-footer{width:calc(100% - 32px);padding:26px 0 36px}}
+@media(prefers-reduced-motion:reduce){.app-shell .primary-nav a{transition:none}}
+@media(max-width:420px){.app-shell .brand-subtitle{display:none}}
+.xunji-brand-symbol{display:block;flex-shrink:0;border-radius:12px}.footer-brand{display:inline-flex;justify-self:start}.footer-brand img{display:block;border-radius:15px}
+.home-page .ai-workspace{position:relative;margin-top:115px;overflow:visible}
+.home-page .xun-companion{position:absolute;right:32px;top:-145px;display:block;width:142px;height:152px;min-height:0;margin:0;padding:0;border:0;border-radius:0;background:none}
+.home-page .agent-stage{width:142px;height:152px;display:block}
+.home-page .agent-character{width:142px;height:152px}
+.home-page .agent-bubble{left:auto;right:128px;top:45px;width:215px;border-radius:16px 16px 3px 16px}
+@media(max-width:600px){.home-page .ai-workspace{margin-top:105px}.home-page .xun-companion{right:10px;top:-121px;width:115px;height:129px}.home-page .agent-stage,.home-page .agent-character{width:115px;height:129px}.home-page .agent-bubble{right:102px;top:35px;width:175px}}
+
+/* Shared product typography and controls; assistant layout has its own scoped sheet. */
+.app-shell :is(h1,h2,h3,h4),.auth-copy h1{font-family:inherit}
+.app-shell .page :is(.page-lead,.description,article>p){line-height:1.7}
+.app-shell .page :is(label>span,small,.item-meta,.item-meta span){font-size:13px}
+.app-shell .page input:not([type=checkbox]):not([type=radio]),.app-shell .page select,.app-shell .page textarea{font-size:15px}
+.app-shell .page button:not(.icon-button){min-height:38px}
+.app-shell .page .status-tag{font-size:12px}
+.app-shell .page .eyebrow{font-size:13px}
+.app-shell .campus-trigger{font-size:13px}
+.app-shell .button{box-shadow:none}
+.app-shell .button-brand{box-shadow:0 4px 12px #375ce415}
+.app-shell .page :is(input,select,textarea):focus-visible{outline:2px solid #2674ef;outline-offset:2px}
+.chat-attachments{display:flex;gap:10px;overflow:auto;background:#fff;padding:10px 16px;flex-shrink:0;max-height:126px}.chat-attachments>div{display:grid;gap:4px;flex:0 0 auto}.chat-attachments img{width:70px;height:65px;border-radius:8px;object-fit:cover}.chat-attachments button{border:0;background:#f1f5fc;padding:5px 8px;border-radius:6px;color:#294564;font-size:13px}
+.xun-chat .agent-task-panel,.xun-chat .agent-task-panel :is(p,label,input,select,textarea,button){font-size:14px}
+.xun-chat :is(.chat-turn,.xun-chat-compose textarea){font-size:15px}
+.xun-chat :is(.compose-actions button,.agent-task-panel button){min-height:38px}
+.xun-chat .xun-chat-messages{min-height:0}
+.assistant-entry{display:grid;justify-items:center;gap:14px;width:100%;max-width:520px}.assistant-entry .xun-companion{position:relative;margin:0;padding:0;width:170px;min-height:190px;height:190px;display:block;background:none;border:0}.assistant-entry .agent-stage{width:170px;height:190px}.assistant-entry .agent-character{width:160px;height:180px}.assistant-entry h2{margin:0}.assistant-entry p{margin:0}.assistant-entry>.button{min-width:200px}
+@media(max-width:620px){.app-shell .campus-trigger{font-size:12px;max-width:116px;min-height:38px}.app-shell .primary-nav{font-size:14px;gap:22px}.app-shell .primary-nav a{min-height:40px}.app-shell .page :is(small,.page-lead,.item-meta){font-size:13px}.app-shell .page :is(input,select,textarea){font-size:16px}.xun-chat :is(.compose-actions button,.agent-task-panel button){min-height:42px}.xun-chat .agent-task-panel{font-size:14px}.xun-chat .agent-task-panel small{font-size:12px}.app-shell .site-footer{margin-top:28px}.app-shell .page-title{font-size:32px;line-height:1.25}}
+
+.app-shell .assistant-page .workspace-welcome>.assistant-entry{display:grid;min-width:0;max-width:100%;width:100%;gap:14px;margin:0;justify-items:center;overflow-wrap:anywhere}
+@media(max-width:620px){.app-shell .primary-nav{gap:20px}.app-shell .assistant-page .workspace-welcome{padding:22px 18px}}
+
+@media(max-width:780px){.app-shell .assistant-page>.assistant-hero{order:0}.app-shell .assistant-page>.mode-banner{order:0}.app-shell .assistant-page>.workspace-welcome{order:1}.app-shell .assistant-page>.assistant-grid{order:2}.app-shell .assistant-page>.confirmation-panel,.app-shell .assistant-page>.results-section{order:3}}
+@media(max-width:620px){.app-shell .primary-nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;width:100%;font-size:clamp(12px,3.3vw,14px)}.app-shell .primary-nav a{display:flex;justify-content:center;align-items:center;min-height:42px;padding:8px 0}}
+
+.assistant-entry h2{color:var(--ct-text)}

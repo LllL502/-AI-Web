@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-17",
+  "addressed_findings": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "backend_full_regression": {
+    "passed": 233,
+    "seconds": 104.59
+  },
+  "backend_final_targeted_regression": {
+    "passed": 16,
+    "seconds": 11.81
+  },
+  "frontend_unit_tests": {
+    "passed": 74,
+    "files": 19
+  },
+  "frontend_build": "passed",
+  "browser_feature_tests": {
+    "passed": 2,
+    "writes_mocked": true
+  },
+  "browser_page_viewports": 80,
+  "page_errors": 0,
+  "unexpected_http_errors": 0,
+  "real_dialogue": "passed: date retained across three turns",
+  "real_voice": {
+    "status": "passed",
+    "generation_seconds": 6.94,
+    "duration": 2.4,
+    "sample_rate": 24000,
+    "bytes": 115244,
+    "cached_greeting": false
+  },
+  "runtime_health": {
+    "database": true,
+    "backend": true,
+    "frontend": true,
+    "dialogue": true,
+    "embedding": true,
+    "vision": true,
+    "voice": true
+  },
+  "migration_check": "no changes detected",
+  "system_check": "no issues",
+  "orphan_files": 0,
+  "scope": "local implementation and verification; production acceptance remains environment-specific"
+}

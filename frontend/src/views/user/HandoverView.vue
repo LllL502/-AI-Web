@@ -1,0 +1,14 @@
+<script setup lang="ts">
+import {readableApiError} from '../../api/client'
+import { ref } from 'vue'
+import { useRoute } from 'vue-router'
+import { api, ApiError } from '../../api/client'
+import AppIcon from '../../components/AppIcon.vue'
+const route = useRoute(); const code = ref(''); const error = ref(''); const verified = ref(false); const confirmed = ref(false)
+async function verify() { try { await api(`/claims/${route.params.claimId}/handover/verify/`, { method:'POST', body:JSON.stringify({code:code.value}) }); verified.value=true; error.value='' } catch(e){ error.value=readableApiError(e,'验证失败') } }
+async function confirm() { try { await api(`/claims/${route.params.claimId}/handover/confirm/`, {method:'POST'}); confirmed.value=true; error.value='' } catch(e){ error.value=readableApiError(e,'确认失败') } }
+</script>
+<template><div class="page handover-page"><header><h1 class="page-title">安全交接</h1><p class="page-lead">交接码有时效且最多尝试 5 次。系统只保存不可逆摘要，双方确认后才完成归还。</p></header><div class="handover-grid"><section class="panel code-panel"><span class="step">步骤 01</span><h2>现场验证交接码</h2><p>请在约定服务站由工作人员和领取人共同完成。</p><div class="code-input"><input v-model="code" maxlength="6" inputmode="numeric" placeholder="000000" aria-label="六位交接码" /><button class="button button-brand" :disabled="code.length !== 6" @click="verify">验证</button></div><p v-if="verified" class="success"><AppIcon name="shield" />交接码验证通过</p><p v-if="error" class="error">{{ error }}</p></section><section class="panel confirm-panel" :class="{ disabled: !verified }"><span class="step">步骤 02</span><h2>双方确认实物交接</h2><p>领取人和站点协调员需分别登录确认；单方确认不会关闭物品。</p><button class="button button-ghost" :disabled="!verified || confirmed" @click="confirm">{{ confirmed ? '当前账户已确认' : '确认我已完成交接' }}</button></section></div></div></template>
+<style scoped>
+.handover-grid { display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px }.code-panel,.confirm-panel {padding:30px;box-shadow:none}.step{color:var(--ct-brand);font:700 12px monospace}.code-panel h2,.confirm-panel h2{margin:18px 0 8px}.code-panel>p,.confirm-panel>p{color:var(--ct-text-muted);line-height:1.7}.code-input{display:flex;gap:10px;margin-top:25px}.code-input input{min-width:0;flex:1;padding:13px;color:var(--ct-text);border:1px solid var(--ct-border);border-radius:11px;background:var(--ct-bg);font:700 25px monospace;letter-spacing:.35em;text-align:center}.confirm-panel{display:flex;align-items:flex-start;flex-direction:column}.confirm-panel button{margin-top:auto}.disabled{opacity:.55}.success{display:flex;align-items:center;gap:8px;color:var(--ct-success)!important}.error{color:var(--ct-danger)!important}@media(max-width:700px){.handover-grid{grid-template-columns:1fr}.confirm-panel button{margin-top:24px}}
+</style>

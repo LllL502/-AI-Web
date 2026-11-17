@@ -1,0 +1,79 @@
+name: campustrace
+
+services:
+  db:
+    image: mysql:8.4
+    restart: unless-stopped
+    env_file:
+      - ${CAMPUS_TRACE_ENV_FILE:-deploy/.env.production}
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_0900_ai_ci
+      - --sql-mode=STRICT_TRANS_TABLES,NO_ZERO_DATE,NO_ZERO_IN_DATE
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -u$$MYSQL_USER -p$$MYSQL_PASSWORD --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 40s
+    networks:
+      - private
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile.prod
+    restart: unless-stopped
+    env_file:
+      - ${CAMPUS_TRACE_ENV_FILE:-deploy/.env.production}
+    environment:
+      MYSQL_HOST: db
+      MYSQL_PORT: "3306"
+      DJANGO_DEBUG: "false"
+      DJANGO_SECURE_COOKIES: "true"
+      DJANGO_SECURE_SSL_REDIRECT: "true"
+      DJANGO_MEDIA_ROOT: /app/media
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - media_data:/app/media
+      - static_data:/app/staticfiles
+    networks:
+      - private
+
+  web:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile.prod
+    restart: unless-stopped
+    env_file:
+      - ${CAMPUS_TRACE_ENV_FILE:-deploy/.env.production}
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - media_data:/media:ro
+      - static_data:/static:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - private
+
+networks:
+  private:
+    driver: bridge
+
+volumes:
+  mysql_data:
+  media_data:
+  static_data:
+  caddy_data:
+  caddy_config:
+

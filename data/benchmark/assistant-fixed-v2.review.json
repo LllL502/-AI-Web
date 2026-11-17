@@ -1,0 +1,9 @@
+{
+  "dataset_version": "assistant-fixed-v2",
+  "dataset_sha256": "f829f66f4e884f9bc215f51af8fff59839aa78265881ff05641467c88243af50",
+  "status": "human_reviewed",
+  "reviewer": "参赛者（当前会话用户）",
+  "date": "2026-11-15",
+  "evidence": "参赛者指出d10、v09、v11场景不贴近校园日常；替换为U盘、笔袋和充电宝后，明确回复：其余认可。",
+  "scope": "场景与预期标签人工认可；合成数据，非独立盲测，非真实校园找回记录。"
+}

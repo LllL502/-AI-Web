@@ -1,0 +1,50 @@
+{
+  "雨伞": {
+    "蓝色": "umbrella-blue"
+  },
+  "纸质笔记本": {
+    "粉色": "notebook-pink"
+  },
+  "充电器": {
+    "黑色": "charger-black",
+    "白色": "charger-white"
+  },
+  "包袋": {
+    "蓝色": "backpack-blue",
+    "黑色": "backpack-black",
+    "灰色": "backpack-gray"
+  },
+  "水杯": {
+    "银色": "bottle-silver",
+    "黑色": "bottle-black"
+  },
+  "耳机": {
+    "蓝色": "earbuds-blue",
+    "黑色": "earbuds-black",
+    "白色": "earbuds-white"
+  },
+  "电脑配件": {
+    "黑色": "mouse-black",
+    "灰色": "",
+    "白色": "mouse-white"
+  },
+  "手机": {
+    "黑色": "phone-black"
+  },
+  "笔袋": {
+    "蓝色": "pencil-blue",
+    "黑色": "pencil-black"
+  },
+  "衣物": {
+    "蓝色": "hoodie-blue",
+    "灰色": "hoodie-gray",
+    "黑色": "hoodie-black"
+  },
+  "钥匙": {
+    "黑色": "keys",
+    "银色": "keys"
+  },
+  "其他物品": {
+    "蓝色": "glasses-blue"
+  }
+}

@@ -1,0 +1,20 @@
+<script setup lang="ts">
+import ListPager from '../../components/ListPager.vue'
+import {useListPage} from '../../composables/useListPage'
+import {apiCollection} from '../../api/collections'
+import { computed, onMounted, ref } from 'vue'
+import { RouterLink } from 'vue-router'
+import { api, ApiError, readableApiError } from '../../api/client'
+import AppIcon from '../../components/AppIcon.vue'
+type Notice={id:number;category:string;title:string;body:string;target_path:string;read_at:string|null;created_at:string}
+const notices=ref<Notice[]>([]);const loading=ref(true);const error=ref('');const unread=computed(()=>notices.value.filter(entry=>!entry.read_at).length)
+async function load(){try{const response=await apiCollection<{data:{items:Notice[]}}>('/notifications/?page_size=100');notices.value=response.data.items}catch(reason){error.value=readableApiError(reason,'无法读取通知')}finally{loading.value=false}}
+const marking=ref(false)
+async function markRead(entry:Notice){if(entry.read_at||marking.value)return;marking.value=true;error.value='';try{const response=await api<{data:Notice}>(`/notifications/${entry.id}/read/`,{method:'POST'});Object.assign(entry,response.data)}catch(reason){error.value=readableApiError(reason,'标记失败，请重试。')}finally{marking.value=false}}
+async function markAll(){if(marking.value)return;marking.value=true;error.value='';try{await api('/notifications/read-all/',{method:'POST'});await load()}catch(reason){error.value=readableApiError(reason,'标记失败，请重试。')}finally{marking.value=false}}
+onMounted(load)
+
+const {page:pagedNoticesPage,rows:pagedNotices}=useListPage(notices)
+</script>
+<template><div class="page notifications"><header><div><h1 class="page-title">通知中心</h1><p class="page-lead">审核、匹配、认领和交接事件集中在此，每条都链接到具体业务对象。</p></div><button v-if="unread" class="button button-ghost" :disabled="marking" @click="markAll">全部标记已读</button></header><p v-if="error&&notices.length" class="error" role="alert">{{error}}</p><div class="counter"><strong>{{unread}}</strong><span>条未读</span></div><p v-if="loading" class="empty">正在同步通知…</p><p v-else-if="error&&!notices.length" class="empty error">{{error}}</p><div v-else-if="notices.length" class="notice-list"><article v-for="entry in pagedNotices" :key="entry.id" :class="['panel','notice',{unread:!entry.read_at}]" ><span class="notice-icon"><AppIcon name="bell"/></span><div><span>{{statusLabel(entry.category)}}</span><h2>{{entry.title}}</h2><p>{{entry.body}}</p><time>{{new Date(entry.created_at).toLocaleString('zh-CN')}}</time></div><button v-if="!entry.read_at" type="button" class="button button-ghost" :disabled="marking" @click="markRead(entry)">标记已读</button><RouterLink v-if="entry.target_path" :to="entry.target_path" class="button button-ghost">查看 <AppIcon name="arrow"/></RouterLink></article></div><div v-else class="empty"><AppIcon name="bell"/><h2>暂无通知</h2><p>后续的审核、匹配和认领状态变化会出现在这里。</p></div><ListPager :page="pagedNoticesPage" :total="notices.length" @change="pagedNoticesPage=$event"/></div></template>
+<style scoped>.notifications header{display:flex;justify-content:space-between;align-items:end;gap:25px}.counter{display:flex;align-items:baseline;gap:8px;margin:34px 0 16px;color:var(--ct-text-muted)}.counter strong{color:var(--ct-brand);font-size:30px}.notice-list{display:grid;gap:10px}.notice{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:20px;box-shadow:none}.notice.unread{border-color:var(--ct-border-strong);background:linear-gradient(90deg,rgba(141,48,46,.05),var(--ct-surface))}.notice-icon{display:grid;place-items:center;width:44px;aspect-ratio:1;color:var(--ct-brand);border-radius:13px;background:rgba(141,48,46,.08)}.notice span,.notice time{color:var(--ct-text-muted);font-size:10px}.notice h2,.notice p{margin:5px 0}.notice p{color:var(--ct-text-muted)}.empty{display:grid;place-items:center;gap:8px;min-height:280px;color:var(--ct-text-muted);border:1px dashed var(--ct-border);border-radius:16px}.error{color:var(--ct-danger)}@media(max-width:650px){.notifications header{align-items:start;flex-direction:column}.notice{grid-template-columns:auto 1fr}.notice>.button{grid-column:2}}</style>

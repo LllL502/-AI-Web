@@ -1,0 +1,9 @@
+{
+  "database_restore": "passed",
+  "tables_compared": 52,
+  "rows_compared": 8611,
+  "media_files_compared": 421,
+  "media_restore": "passed",
+  "temporary_database_dropped": true,
+  "scope": "bundled local MySQL; Docker server drill must also run after deployment"
+}
