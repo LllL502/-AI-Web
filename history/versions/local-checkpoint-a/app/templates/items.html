@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import item_card %}
+{% block title %}物品广场{% endblock %}
+{% block content %}
+<section class="page-hero container reveal"><span class="eyebrow">CAMPUS SIGNALS</span><h1>校园物品线索广场</h1><p>检索全校公开信息，或让智能引擎为你的物品寻找候选。</p></section>
+<section class="container browse-layout">
+  <form class="filter-bar glass-card reveal" method="get">
+    <div class="segmented"><a class="{{ 'active' if filters.type == 'all' }}" href="{{ url_for('items.browse', q=filters.q, category=filters.category) }}">全部</a><a class="{{ 'active' if filters.type == 'lost' }}" href="{{ url_for('items.browse', type='lost', q=filters.q, category=filters.category) }}">寻物</a><a class="{{ 'active' if filters.type == 'found' }}" href="{{ url_for('items.browse', type='found', q=filters.q, category=filters.category) }}">招领</a></div>
+    <input type="hidden" name="type" value="{{ filters.type }}">
+    <div class="search-box"><span>⌕</span><input type="search" name="q" value="{{ filters.q }}" placeholder="搜索物品、地点或特征"></div>
+    <select name="category" aria-label="类别"><option value="">全部类别</option>{% for option in category_options %}<option value="{{ option }}" {{ 'selected' if filters.category == option }}>{{ option }}</option>{% endfor %}</select>
+    <button class="button button-small" type="submit">筛选</button>
+  </form>
+  <div class="result-heading"><span>共找到 <strong>{{ items|length }}</strong> 条有效线索</span><div><a href="{{ url_for('items.publish', item_type='lost') }}">＋ 发布寻物</a><a href="{{ url_for('items.publish', item_type='found') }}">＋ 发布招领</a></div></div>
+  {% if items %}<div class="card-grid">{% for item in items %}{{ item_card(item) }}{% endfor %}</div>{% else %}<div class="empty-state"><span>⌕</span><h3>暂未找到相关线索</h3><p>换个关键词试试，或立即发布信息启动智能匹配。</p></div>{% endif %}
+</section>
+{% endblock %}
+

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}登录{% endblock %}
+{% block content %}
+<section class="auth-shell container">
+  <div class="auth-aside reveal"><span class="eyebrow">WELCOME BACK</span><h1>重新连接<br><span class="gradient-text">校园的善意。</span></h1><p>登录后查看专属智能匹配、管理信息并完成安全认领。</p><div class="quote-card">“真正的技术创新，是让一次偶然的善意成为可靠的系统能力。”</div></div>
+  <form class="form-card glass-card reveal" method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <div class="form-head"><span class="form-icon">↗</span><div><h2>账号登录</h2><p>使用校园邮箱或注册邮箱</p></div></div>
+    <label>邮箱地址<input type="email" name="email" autocomplete="email" required placeholder="name@campus.edu"></label>
+    <label>登录密码<div class="password-wrap"><input type="password" name="password" autocomplete="current-password" required placeholder="输入密码"><button type="button" class="password-toggle" aria-label="显示密码">◉</button></div></label>
+    <button class="button button-block" type="submit">安全登录 <span>→</span></button>
+    <p class="form-foot">还没有账号？<a href="{{ url_for('auth.register') }}">立即注册</a></p>
+  </form>
+</section>
+{% endblock %}
+

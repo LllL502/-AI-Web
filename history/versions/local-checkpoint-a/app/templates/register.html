@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}注册{% endblock %}
+{% block content %}
+<section class="auth-shell container">
+  <div class="auth-aside reveal"><span class="eyebrow">JOIN THE NETWORK</span><h1>成为校园互助网络的<br><span class="gradient-text">一个温暖节点。</span></h1><p>你的每次发布与反馈，都让匹配模型更懂校园真实场景。</p><ul class="feature-list"><li><i>01</i>智能候选实时排序</li><li><i>02</i>认领信息私密核验</li><li><i>03</i>全流程状态可追踪</li></ul></div>
+  <form class="form-card glass-card reveal" method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <div class="form-head"><span class="form-icon">＋</span><div><h2>创建账号</h2><p>约 30 秒完成注册</p></div></div>
+    <label>显示名称<input type="text" name="username" minlength="2" maxlength="20" required placeholder="例如：林同学"></label>
+    <label>邮箱地址<input type="email" name="email" autocomplete="email" required placeholder="name@campus.edu"></label>
+    <label>设置密码<div class="password-wrap"><input type="password" name="password" minlength="8" required placeholder="至少 8 位，含字母和数字"><button type="button" class="password-toggle" aria-label="显示密码">◉</button></div></label>
+    <label>确认密码<input type="password" name="confirm_password" minlength="8" required placeholder="再次输入密码"></label>
+    <button class="button button-block" type="submit">加入 CampusLink <span>→</span></button>
+    <p class="form-foot">已有账号？<a href="{{ url_for('auth.login') }}">返回登录</a></p>
+  </form>
+</section>
+{% endblock %}
+

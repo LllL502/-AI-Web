@@ -1,0 +1,41 @@
+from django.utils import timezone
+from rest_framework import status, viewsets
+from rest_framework.decorators import action
+from rest_framework.response import Response
+
+from apps.accounts.models import User
+
+from .models import Conversation, ConversationParticipant, Message
+from .serializers import ConversationSerializer, MessageSerializer
+
+
+class ConversationViewSet(viewsets.ReadOnlyModelViewSet):
+    serializer_class = ConversationSerializer
+
+    def get_queryset(self):
+        queryset = Conversation.objects.select_related("item", "claim").prefetch_related(
+            "participants__user", "messages__sender"
+        )
+        if self.request.user.role == User.Role.ADMIN:
+            return queryset.order_by("-updated_at")
+        return queryset.filter(participants__user=self.request.user).distinct().order_by("-updated_at")
+
+    def retrieve(self, request, *args, **kwargs):
+        conversation = self.get_object()
+        ConversationParticipant.objects.filter(conversation=conversation, user=request.user).update(last_read_at=timezone.now())
+        return Response({"data": self.get_serializer(conversation).data})
+
+    @action(detail=True, methods=["post"])
+    def messages(self, request, pk=None):
+        conversation = self.get_object()
+        body = str(request.data.get("body", "")).strip()
+        if not body:
+            return Response(
+                {"error": {"code": "empty_message", "message": "消息内容不能为空", "fields": {}, "request_id": request.request_id}},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        message = Message.objects.create(conversation=conversation, sender=request.user, body=body)
+        conversation.updated_at = timezone.now()
+        conversation.save(update_fields=["updated_at"])
+        ConversationParticipant.objects.filter(conversation=conversation, user=request.user).update(last_read_at=timezone.now())
+        return Response({"data": MessageSerializer(message).data}, status=status.HTTP_201_CREATED)

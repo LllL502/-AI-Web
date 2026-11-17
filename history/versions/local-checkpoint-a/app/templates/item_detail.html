@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}{{ item.title }}{% endblock %}
+{% block content %}
+<section class="container detail-layout">
+  <article class="detail-main reveal">
+    <div class="breadcrumb"><a href="{{ url_for('items.browse') }}">物品广场</a><span>/</span><span>{{ item.category }}</span></div>
+    <div class="detail-title"><div><span class="type-badge {{ item.item_type }}">{{ '寻物启事' if item.item_type == 'lost' else '招领启事' }}</span><span class="status-badge {{ item.status }}">{{ {'open':'进行中','matched':'已匹配','closed':'已关闭'}[item.status] }}</span><h1>{{ item.title }}</h1><p>由 {{ item.username }} 发布 · {{ item.created_at|date_cn }} · {{ item.views + 1 }} 次浏览</p></div><div class="object-glyph">{{ '⌕' if item.item_type == 'lost' else '✦' }}</div></div>
+    <div class="detail-section"><h2>物品描述</h2><p class="detail-description">{{ item.description }}</p></div>
+    <div class="attribute-grid"><div><small>物品类别</small><strong>{{ item.category }}</strong></div><div><small>颜色</small><strong>{{ item.color or '未填写' }}</strong></div><div><small>品牌</small><strong>{{ item.brand or '未填写' }}</strong></div><div><small>发生时间</small><strong>{{ item.event_time|date_cn }}</strong></div><div class="wide"><small>发生地点</small><strong>⌖ {{ item.location }}</strong></div></div>
+    <div class="privacy-note">🛡 请勿在核验前透露完整证件号、支付密码等敏感信息。</div>
+  </article>
+  <aside class="detail-aside reveal">
+    {% if g.user and g.user.id == item.user_id %}
+      <div class="side-card accent-card"><span class="eyebrow">OWNER CONSOLE</span><h3>这是你发布的信息</h3><p>查看算法对全站相反类型物品的实时排序。</p><a class="button button-block" href="{{ url_for('matching.matches', item_id=item.id) }}">查看智能匹配 →</a></div>
+    {% elif item.status == 'open' %}
+      <div class="side-card"><span class="eyebrow">SECURE CLAIM</span><h3>这可能是你的物品？</h3><p>提供只有真正失主知道的细节，发布者确认后才完成认领。</p>
+      {% if g.user %}{% if has_claimed %}<div class="submitted-state">✓ 已提交认领申请</div>{% else %}<form method="post" action="{{ url_for('items.claim', item_id=item.id) }}"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><label>私密核验特征<textarea name="evidence" minlength="10" required placeholder="例如：包内夹层有什么、卡号末四位……"></textarea></label><button class="button button-block" type="submit">提交认领申请</button></form>{% endif %}{% else %}<a class="button button-block" href="{{ url_for('auth.login', next=request.path) }}">登录后安全认领</a>{% endif %}</div>
+    {% else %}<div class="side-card"><h3>该信息已结束</h3><p>物品已完成匹配或由发布者关闭。</p></div>{% endif %}
+    <div class="side-card contact-card"><small>联系渠道</small>{% if g.user %}<strong>{{ item.contact }}</strong><p>联系时请说明来自 CampusLink。</p>{% else %}<strong>登录后可见</strong><p>保护发布者隐私，减少骚扰信息。</p>{% endif %}</div>
+  </aside>
+</section>
+{% endblock %}
+

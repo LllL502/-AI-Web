@@ -1,0 +1,2 @@
+{% extends 'base.html' %}{% block title %}请求无效{% endblock %}{% block content %}<section class="error-page container"><strong>400</strong><h1>请求未能通过安全校验</h1><p>{{ message }}</p><a class="button" href="{{ url_for('main.home') }}">返回首页</a></section>{% endblock %}
+

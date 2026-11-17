@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import item_card %}
+{% block title %}让遗失更快重逢{% endblock %}
+{% block content %}
+<section class="hero container">
+  <div class="hero-copy reveal">
+    <span class="eyebrow"><i></i> AI 驱动的校园互助网络</span>
+    <h1>失而复得，<br><span class="gradient-text">不再只靠运气。</span></h1>
+    <p>以可解释的文本语义与多维线索融合，让每一条失物信息被准确看见，让善意更快抵达。</p>
+    <div class="hero-actions">
+      <a class="button" href="{{ url_for('items.publish', item_type='lost') }}">我丢了物品 <span>→</span></a>
+      <a class="button button-secondary" href="{{ url_for('items.publish', item_type='found') }}">我捡到物品</a>
+    </div>
+    <div class="trust-row"><span>✓ 可解释匹配</span><span>✓ 隐私核验</span><span>✓ 全流程闭环</span></div>
+  </div>
+  <div class="hero-visual reveal">
+    <div class="orb orb-one"></div><div class="orb orb-two"></div>
+    <div class="match-console glass-card">
+      <div class="console-head"><span>智能匹配进行中</span><i class="live-dot"></i></div>
+      <div class="object-row"><span class="object-icon">🎒</span><div><small>寻物信息</small><strong>{{ hero_match.source.title if hero_match else '等待新的寻物信息' }}</strong><span>{{ hero_match.source.location if hero_match else '发布后即可启动匹配' }}</span></div></div>
+      <div class="signal-line"><i></i><b>语义特征对齐</b><i></i></div>
+      <div class="object-row highlight"><span class="object-icon">✨</span><div><small>最佳候选</small><strong>{{ hero_match.result.item.title if hero_match else '候选持续检索中' }}</strong><span>{{ (hero_match.result.shared_terms|length ~ ' 个共享语义特征') if hero_match else '等待相反类型线索' }}</span></div><em>{{ (hero_match.result.score_percent ~ '%') if hero_match else '—' }}</em></div>
+      <div class="factor-mini"><span style="--w: {{ hero_match.result.factors.text * 100 if hero_match else 0 }}%">文本语义</span><span style="--w: {{ hero_match.result.factors.category * 100 if hero_match else 0 }}%">类别一致</span><span style="--w: {{ (((hero_match.result.factors.time + hero_match.result.factors.location) / 2) * 100) if hero_match else 0 }}%">时空邻近</span></div>
+    </div>
+    <span class="floating-tag tag-a">TF-IDF 特征</span><span class="floating-tag tag-b">余弦相似度</span>
+  </div>
+</section>
+
+<section class="stats-band">
+  <div class="container stats-grid">
+    <div><strong data-count="{{ stats.open }}">{{ stats.open }}</strong><span>正在寻找</span></div>
+    <div><strong data-count="{{ stats.matched }}">{{ stats.matched }}</strong><span>成功匹配</span></div>
+    <div><strong data-count="{{ stats.users }}">{{ stats.users }}</strong><span>互助成员</span></div>
+    <div><strong>5D</strong><span>多维特征融合</span></div>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="section-heading reveal"><div><span class="eyebrow">RECENT SIGNALS</span><h2>最新校园线索</h2></div><a class="arrow-link" href="{{ url_for('items.browse') }}">进入物品广场 →</a></div>
+  {% if recent %}<div class="card-grid">{% for item in recent %}{{ item_card(item) }}{% endfor %}</div>
+  {% else %}<div class="empty-state"><span>◎</span><h3>等待第一条校园线索</h3><p>发布一条信息，智能匹配引擎将立即开始工作。</p></div>{% endif %}
+</section>
+
+<section class="section algorithm-section">
+  <div class="container">
+    <div class="section-heading centered reveal"><span class="eyebrow">EXPLAINABLE AI</span><h2>每一次推荐，都有证据可循</h2><p>拒绝黑盒打分，从文字到时空线索，完整呈现匹配依据。</p></div>
+    <div class="algorithm-flow reveal">
+      <div class="algorithm-node"><b>01</b><span class="node-icon">文</span><h3>语义特征提取</h3><p>领域分词、同义归一与平滑 TF-IDF，强化关键细节。</p></div>
+      <i class="flow-arrow">→</i>
+      <div class="algorithm-node featured"><b>02</b><span class="node-icon">∠</span><h3>余弦相似度</h3><p>在高维向量空间测量描述方向一致性，量化语义接近程度。</p></div>
+      <i class="flow-arrow">→</i>
+      <div class="algorithm-node"><b>03</b><span class="node-icon">Σ</span><h3>自适应线性融合</h3><p>综合类别、时间、地点与属性，缺失字段自动重分配权重。</p></div>
+    </div>
+    <div class="center-action"><a class="button button-secondary" href="{{ url_for('main.algorithm_lab') }}">进入算法实验室</a></div>
+  </div>
+</section>
+
+<section class="section container cta-panel reveal">
+  <div><span class="eyebrow">START A SIGNAL</span><h2>也许你发布的一条信息，<br>正是另一个人等待的答案。</h2></div>
+  <div class="hero-actions"><a class="button" href="{{ url_for('items.publish', item_type='found') }}">发布招领</a><a class="button button-ghost" href="{{ url_for('items.browse') }}">浏览线索</a></div>
+</section>
+{% endblock %}
