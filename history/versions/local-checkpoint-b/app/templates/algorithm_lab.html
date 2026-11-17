@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}算法实验室{% endblock %}
+{% set factor_names = {'text':'文本语义','category':'类别一致','time':'时间邻近','location':'地点相似','attributes':'颜色属性'} %}
+{% block content %}
+<section class="page-hero container reveal"><span class="eyebrow">OPEN ALGORITHM LAB</span><h1>看得见的匹配算法</h1><p>自由修改两条描述，实时观察 TF-IDF、余弦相似度与线性融合如何形成最终判断。</p></section>
+<section class="container lab-layout">
+  <form class="lab-form panel reveal" method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <div class="comparison-grid">
+      {% for side, label in [('left','信息 A · 寻物'),('right','信息 B · 招领')] %}<div><span class="type-badge {{ 'lost' if side == 'left' else 'found' }}">{{ label }}</span><label>文本描述<textarea name="{{ side }}_text" required>{{ values[side + '_text'] }}</textarea></label><label>发生地点<input name="{{ side }}_location" value="{{ values[side + '_location'] }}" required></label><div class="form-grid"><label>类别<select name="{{ side }}_category">{% for option in category_options %}<option {{ 'selected' if option == '箱包服饰' }}>{{ option }}</option>{% endfor %}</select></label><label>颜色<input name="{{ side }}_color" value="黑色"></label><label class="wide">时间<input type="datetime-local" name="{{ side }}_time" value="{{ '2026-09-16T19:30' if side == 'left' else '2026-09-16T20:10' }}" required></label></div></div>{% endfor %}
+    </div>
+    <button class="button button-block" type="submit">运行真实匹配计算 <span>→</span></button>
+  </form>
+  {% if result %}<div class="lab-result reveal"><div class="lab-score"><span>综合匹配分</span><strong>{{ result.score_percent }}<small>%</small></strong><em>{{ result.recommendation }}</em></div><div class="formula-card"><code>S = Σ (wᵢ′ × sᵢ)</code><p>系统根据字段完整度重新归一化有效权重，再进行严格线性加权。</p></div><div class="factor-table"><div class="factor-table-head"><span>因子</span><span>原始得分</span><span>有效权重</span><span>贡献值</span></div>{% for key, label in factor_names.items() %}<div><strong>{{ label }}</strong><span>{{ '%.4f'|format(result.factors[key]) }}</span><span>{{ '%.4f'|format(result.effective_weights[key]) }}</span><span class="accent">{{ '%.4f'|format(result.contributions[key]) }}</span></div>{% endfor %}</div><div class="shared-terms"><small>余弦相似度的主要共享词贡献</small>{% for term in result.shared_terms %}<span>{{ term.term }} <b>{{ term.contribution }}</b></span>{% else %}<p>两段文本暂无共享词项。</p>{% endfor %}</div></div>
+  {% else %}<div class="lab-placeholder reveal"><span>Σ</span><h2>等待一次实验</h2><p>点击运行后，这里将展示每个因子的原始分数、有效权重、贡献值与共享关键词。</p></div>{% endif %}
+</section>
+{% endblock %}
+

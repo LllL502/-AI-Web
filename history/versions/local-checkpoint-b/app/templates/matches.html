@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}智能匹配结果{% endblock %}
+{% set factor_names = {'text':'文本语义','category':'类别一致','time':'时间邻近','location':'地点相似','attributes':'属性特征'} %}
+{% block content %}
+<section class="page-hero compact container reveal"><span class="eyebrow">AI MATCHING REPORT</span><h1>智能匹配报告</h1><p>源物品：{{ source.title }} · 共发现 {{ results|length }} 个相反类型候选</p></section>
+<section class="container match-layout">
+  <aside class="source-panel glass-card reveal"><span class="type-badge {{ source.item_type }}">{{ '寻物源' if source.item_type == 'lost' else '招领源' }}</span><h2>{{ source.title }}</h2><p>{{ source.description }}</p><dl><div><dt>类别</dt><dd>{{ source.category }}</dd></div><div><dt>地点</dt><dd>{{ source.location }}</dd></div><div><dt>时间</dt><dd>{{ source.event_time|date_cn }}</dd></div></dl><a class="arrow-link" href="{{ url_for('items.detail', item_id=source.id) }}">查看原始信息 →</a><div class="model-note"><b>模型版本</b><span>TF-IDF Cosine Fusion v1.0</span><small>所有分数实时计算，未使用静态演示值</small></div></aside>
+  <div class="match-results">
+    {% if results %}
+      {% for result in results %}
+      <article class="match-card reveal {{ 'best' if loop.first }}">
+        {% if loop.first %}<span class="best-ribbon">最佳候选</span>{% endif %}
+        <div class="match-card-head"><div><span class="rank">#{{ loop.index }}</span><span class="category-chip">{{ result.item.category }}</span><h2><a href="{{ url_for('items.detail', item_id=result.item.id) }}">{{ result.item.title }}</a></h2><p>{{ result.item.description }}</p></div><div class="score-ring {{ result.confidence }}" style="--score: {{ result.score_percent }}"><strong>{{ result.score_percent }}<small>%</small></strong><span>综合匹配</span></div></div>
+        <div class="factor-bars">
+          {% for key, label in factor_names.items() %}<div><span>{{ label }}</span><i><b style="width: {{ result.factors[key] * 100 }}%"></b></i><em>{{ (result.factors[key] * 100)|round|int }}</em></div>{% endfor %}
+        </div>
+        <div class="explain-row"><div><small>模型建议</small><strong>{{ result.recommendation }}</strong></div><div><small>共享关键特征</small><span>{% for term in result.shared_terms %}<i class="term-chip">{{ term.term }}</i>{% else %}暂无直接共享词{% endfor %}</span></div></div>
+        <div class="match-actions"><a class="button button-small" href="{{ url_for('items.detail', item_id=result.item.id) }}">查看并核验</a><span>这个推荐有帮助吗？</span><form method="post" action="{{ url_for('matching.feedback', source_id=source.id, candidate_id=result.item.id) }}"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="feedback-button {{ 'active' if feedback.get(result.item.id) == 1 }}" name="label" value="1" title="有帮助">✓</button><button class="feedback-button {{ 'active' if feedback.get(result.item.id) == 0 }}" name="label" value="0" title="无帮助">×</button></form></div>
+      </article>
+      {% endfor %}
+    {% else %}<div class="empty-state"><span>◎</span><h3>暂未发现相反类型候选</h3><p>匹配引擎会随新线索加入而产生结果，请稍后再来。</p><a class="button button-small" href="{{ url_for('items.browse') }}">浏览物品广场</a></div>{% endif %}
+  </div>
+</section>
+{% endblock %}
+

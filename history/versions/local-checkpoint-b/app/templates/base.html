@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CampusLink 校园失物招领智能匹配系统">
+  <meta name="theme-color" content="#07111f">
+  <title>{% block title %}CampusLink{% endblock %} · 校园失物智能匹配</title>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <nav class="nav container" aria-label="主导航">
+      <a class="brand" href="{{ url_for('main.home') }}" aria-label="CampusLink 首页">
+        <span class="brand-mark">C</span><span>Campus<span class="accent">Link</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="打开菜单" aria-expanded="false">☰</button>
+      <div class="nav-links">
+        <a href="{{ url_for('items.browse') }}">物品广场</a>
+        <a href="{{ url_for('main.algorithm_lab') }}">算法实验室</a>
+        {% if g.user %}
+          <a href="{{ url_for('items.publish', item_type='lost') }}">发布信息</a>
+          <a href="{{ url_for('items.dashboard') }}">个人中心</a>
+          <form action="{{ url_for('auth.logout') }}" method="post" class="nav-form">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+            <button class="link-button" type="submit">退出</button>
+          </form>
+        {% else %}
+          <a href="{{ url_for('auth.login') }}">登录</a>
+          <a class="button button-small" href="{{ url_for('auth.register') }}">立即加入</a>
+        {% endif %}
+      </div>
+    </nav>
+  </header>
+
+  <div class="flash-stack container" aria-live="polite">
+    {% for category, message in get_flashed_messages(with_categories=true) %}
+      <div class="flash flash-{{ category }}">
+        <span>{{ message }}</span><button type="button" aria-label="关闭">×</button>
+      </div>
+    {% endfor %}
+  </div>
+
+  <main>{% block content %}{% endblock %}</main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><a class="brand" href="{{ url_for('main.home') }}"><span class="brand-mark">C</span> CampusLink</a><p>让每一件遗失，都更接近重逢。</p></div>
+      <div><strong>技术引擎</strong><span>TF-IDF · 余弦相似度 · 多因子融合</span></div>
+      <div><strong>隐私承诺</strong><span>最小披露 · 私密核验 · 数据本地化</span></div>
+    </div>
+    <p class="copyright">© {{ now_year }} CampusLink 智慧校园创新项目</p>
+  </footer>
+  <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

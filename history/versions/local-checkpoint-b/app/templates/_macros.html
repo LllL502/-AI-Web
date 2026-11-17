@@ -1,0 +1,16 @@
+{% macro item_card(item) %}
+<article class="item-card reveal">
+  <div class="item-card-top">
+    <span class="type-badge {{ item['item_type'] }}">{{ '寻物' if item['item_type'] == 'lost' else '招领' }}</span>
+    <span class="category-chip">{{ item['category'] }}</span>
+  </div>
+  <h3><a href="{{ url_for('items.detail', item_id=item['id']) }}">{{ item['title'] }}</a></h3>
+  <p class="line-clamp">{{ item['description'] }}</p>
+  <div class="item-meta"><span>⌖ {{ item['location'] }}</span><span>◷ {{ item['event_time']|date_cn }}</span></div>
+  <div class="item-card-bottom">
+    <span class="publisher">由 {{ item['username'] if item['username'] is defined else '校园用户' }} 发布</span>
+    <a class="arrow-link" href="{{ url_for('items.detail', item_id=item['id']) }}">查看详情 <span>→</span></a>
+  </div>
+</article>
+{% endmacro %}
+

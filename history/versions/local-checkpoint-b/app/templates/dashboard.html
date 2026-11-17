@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}个人中心{% endblock %}
+{% block content %}
+<section class="dashboard-hero container reveal"><div><span class="eyebrow">PERSONAL COMMAND CENTER</span><h1>你好，{{ g.user.username }}</h1><p>管理线索、查看认领进度，让每次互助有始有终。</p></div><div class="hero-actions"><a class="button" href="{{ url_for('items.publish', item_type='lost') }}">＋ 发布寻物</a><a class="button button-secondary" href="{{ url_for('items.publish', item_type='found') }}">＋ 发布招领</a></div></section>
+<section class="container dashboard-stats reveal"><div><span>累计发布</span><strong>{{ stats.published }}</strong></div><div><span>进行中</span><strong>{{ stats.open }}</strong></div><div><span>已完成</span><strong>{{ stats.resolved }}</strong></div><div><span>线索浏览</span><strong>{{ stats.views }}</strong></div></section>
+<section class="container dashboard-grid">
+  <div class="dashboard-main">
+    <div class="panel reveal"><div class="panel-head"><div><span class="eyebrow">MY SIGNALS</span><h2>我发布的信息</h2></div><span>{{ items|length }} 条</span></div>
+      {% if items %}<div class="data-list">{% for item in items %}<div class="data-row"><span class="type-badge {{ item.item_type }}">{{ '寻物' if item.item_type == 'lost' else '招领' }}</span><div class="data-primary"><a href="{{ url_for('items.detail', item_id=item.id) }}">{{ item.title }}</a><span>{{ item.location }} · {{ item.event_time|date_cn }}</span></div><span class="status-badge {{ item.status }}">{{ {'open':'进行中','matched':'已匹配','closed':'已关闭'}[item.status] }}</span><div class="row-actions">{% if item.status == 'open' %}<a href="{{ url_for('matching.matches', item_id=item.id) }}">智能匹配</a><form method="post" action="{{ url_for('items.change_status', item_id=item.id) }}"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button name="status" value="closed">关闭</button></form>{% elif item.status == 'closed' %}<form method="post" action="{{ url_for('items.change_status', item_id=item.id) }}"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button name="status" value="open">重新开启</button></form>{% endif %}</div></div>{% endfor %}</div>{% else %}<div class="empty-inline">还没有发布信息，创建第一条校园线索吧。</div>{% endif %}
+    </div>
+    <div class="panel reveal"><div class="panel-head"><div><span class="eyebrow">CLAIM VERIFICATION</span><h2>收到的认领申请</h2></div><span>{{ incoming|length }} 条</span></div>
+      {% if incoming %}<div class="claim-list">{% for claim in incoming %}<article><div><strong>{{ claim.claimant_name }} 申请认领「{{ claim.title }}」</strong><span>{{ claim.created_at|date_cn }}</span></div><blockquote>{{ claim.evidence }}</blockquote><div class="claim-actions"><span class="status-badge {{ claim.status }}">{{ {'pending':'待核验','approved':'已通过','rejected':'已驳回'}[claim.status] }}</span>{% if claim.status == 'pending' %}<form method="post" action="{{ url_for('items.decide_claim', claim_id=claim.id, decision='approved') }}"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="button button-small">确认归还</button></form><form method="post" action="{{ url_for('items.decide_claim', claim_id=claim.id, decision='rejected') }}"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="text-button">驳回</button></form>{% endif %}</div></article>{% endfor %}</div>{% else %}<div class="empty-inline">暂无新的认领申请。</div>{% endif %}
+    </div>
+  </div>
+  <aside class="dashboard-side">
+    <div class="panel reveal"><div class="panel-head"><div><span class="eyebrow">MY CLAIMS</span><h2>我的认领</h2></div></div>{% if outgoing %}<div class="mini-list">{% for claim in outgoing %}<div><strong>{{ claim.title }}</strong><span class="status-badge {{ claim.status }}">{{ {'pending':'等待核验','approved':'认领成功','rejected':'未通过'}[claim.status] }}</span></div>{% endfor %}</div>{% else %}<div class="empty-inline">暂无认领记录。</div>{% endif %}</div>
+    <div class="side-card accent-card reveal"><span class="eyebrow">SAFETY FIRST</span><h3>线下交接建议</h3><ul><li>选择服务站或监控覆盖区域</li><li>核对独特特征后再交付</li><li>涉及贵重物品可邀请老师见证</li></ul></div>
+  </aside>
+</section>
+{% endblock %}
+

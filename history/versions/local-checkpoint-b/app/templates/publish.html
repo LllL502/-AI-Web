@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}发布{{ '寻物' if item_type == 'lost' else '招领' }}{% endblock %}
+{% block content %}
+<section class="page-hero compact container reveal"><span class="eyebrow">CREATE A SIGNAL</span><h1>发布{{ '寻物' if item_type == 'lost' else '招领' }}信息</h1><p>描述越具体，TF-IDF 特征越充分，匹配结果越精准。</p></section>
+<section class="container publish-layout">
+  <div class="publish-guide reveal">
+    <div class="step active"><i>1</i><div><strong>基础信息</strong><span>物品名称与类别</span></div></div>
+    <div class="step"><i>2</i><div><strong>特征线索</strong><span>外观、地点与时间</span></div></div>
+    <div class="step"><i>3</i><div><strong>智能匹配</strong><span>发布后即时计算</span></div></div>
+    <div class="tip-card"><b>✦ 匹配小贴士</b><p>建议写明颜色、品牌、独特挂件、划痕或包装特征；不要公开证件完整号码。</p></div>
+  </div>
+  <form class="form-card publish-form reveal" method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <div class="form-section"><div class="form-section-title"><span>01</span><div><h2>这是什么物品？</h2><p>用一句清楚的话概括</p></div></div>
+      <div class="form-grid"><label class="wide">信息标题<input type="text" name="title" maxlength="60" required value="{{ request.form.get('title','') }}" placeholder="例如：寻找黑色双肩包"></label><label>物品类别<select name="category" required><option value="">请选择</option>{% for option in category_options %}<option {{ 'selected' if request.form.get('category') == option }}>{{ option }}</option>{% endfor %}</select></label><label>颜色<input type="text" name="color" value="{{ request.form.get('color','') }}" placeholder="例如：黑色"></label><label>品牌<input type="text" name="brand" value="{{ request.form.get('brand','') }}" placeholder="选填"></label></div>
+    </div>
+    <div class="form-section"><div class="form-section-title"><span>02</span><div><h2>补充关键特征</h2><p>独特细节能显著提升语义相似度</p></div></div>
+      <label>详细描述<textarea name="description" minlength="10" maxlength="500" required data-counter placeholder="请描述材质、大小、独特标记以及内含物等……">{{ request.form.get('description','') }}</textarea><small class="counter">0 / 500</small></label>
+      <div class="form-grid"><label>发生地点<input type="text" name="location" required value="{{ request.form.get('location','') }}" placeholder="例如：图书馆二楼东侧"></label><label>发生时间<input type="datetime-local" name="event_time" max="{{ max_time }}" required value="{{ request.form.get('event_time','') }}"></label></div>
+    </div>
+    <div class="form-section"><div class="form-section-title"><span>03</span><div><h2>设置联系渠道</h2><p>仅向已登录用户展示</p></div></div><label>联系方式<input type="text" name="contact" maxlength="80" required value="{{ request.form.get('contact','') }}" placeholder="手机号、邮箱或校园服务站"></label></div>
+    <button class="button button-block" type="submit">发布并启动智能匹配 <span>→</span></button>
+  </form>
+</section>
+{% endblock %}
+

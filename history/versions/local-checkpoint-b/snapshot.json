@@ -1,0 +1,905 @@
+{
+  "id": "local-checkpoint-b",
+  "scope": [
+    "app",
+    "campustrace/backend",
+    "campustrace/frontend"
+  ],
+  "source_evidence": {
+    "original_git_tree": "26e0aacdccde47f659fee644d863c533f35fe4c8",
+    "time_basis": "本地快照引用中的时间线索，不能等同于普通Git提交时间或独立时间认证",
+    "scope": "留存树对象内的源码；不承诺覆盖完整工程"
+  },
+  "archived_at": "2026-11-17T22:25:51.517499+08:00",
+  "limitations": "原样恢复留存源码文本；未包含照片、构建产物、运行数据库、依赖及密钥。局部前端版本不代表当时完整项目状态。历史时间依据不是本次Git提交时间。",
+  "files": {
+    "app/auth.py": {
+      "sha256": "02ff8df932ff6c6b649c91442f82ed3007851493983022eabf0070b7dcfaa8c7",
+      "bytes": 3406
+    },
+    "app/database.py": {
+      "sha256": "c38f1b44893777bef237f01361b1ef3c03f55191d327add031bca1c2d7275e6f",
+      "bytes": 1268
+    },
+    "app/items.py": {
+      "sha256": "8b6a1d1392f55cfd05a2450f3e361174f39cdf0fbdd97e2eaeaa7f3e4ab1efe5",
+      "bytes": 6827
+    },
+    "app/main.py": {
+      "sha256": "e1276212522816bc2ced1d137737e50583f2b7695d786cacbadb64f985f9626d",
+      "bytes": 2770
+    },
+    "app/matching.py": {
+      "sha256": "370db048a1f2a33afff0940adbd9b0f07c0707f0ee4adff48e9401c7aeb6432c",
+      "bytes": 2447
+    },
+    "app/models.py": {
+      "sha256": "9047208f5e885f15e5b1dd2851a053f47952857fb38e899ed3699b8cca3d0eae",
+      "bytes": 1522
+    },
+    "app/__init__.py": {
+      "sha256": "89d4a2ba1860ca45bc9e5944ced3495d3711e7d152cd2325e2412133fbd961b4",
+      "bytes": 5890
+    },
+    "app/algorithms/ranking.py": {
+      "sha256": "68c65c658fb67b2933707eb0e49db678e04fcdc0f08f10093cc31ad49fe7b162",
+      "bytes": 6060
+    },
+    "app/algorithms/similarity.py": {
+      "sha256": "953836626147ea591750fceb53011363b90b5fc08fc56a8c1691e99d653cc080",
+      "bytes": 1064
+    },
+    "app/algorithms/text.py": {
+      "sha256": "4dc941d80f71a8c56fad689ebc6730bde49ad8b8e1261f6c60447e776f7325a1",
+      "bytes": 4649
+    },
+    "app/algorithms/tfidf.py": {
+      "sha256": "ab90401014b588e937f3cff21e6c067ba4849fbe3310c54d748bc37085f655d8",
+      "bytes": 2041
+    },
+    "app/algorithms/__init__.py": {
+      "sha256": "031b83c7fb95995eb182c8f8a4171876b46783d16d2f0d124cda3608ea75287c",
+      "bytes": 263
+    },
+    "app/static/favicon.svg": {
+      "sha256": "5c4f6b8ed9f86806280da7e7e2cd71cc49180ef9d782a8cdf1018c8fcca00589",
+      "bytes": 492
+    },
+    "app/static/css/style.css": {
+      "sha256": "936c34c5fc10f61bf056509905007137511691ce261b3b9578278dfaeffbeec1",
+      "bytes": 37235
+    },
+    "app/templates/400.html": {
+      "sha256": "cf94dc1dcf4d8e66fe23e862df5c740319244cb89377d22bd0f181c07941094c",
+      "bytes": 298
+    },
+    "app/templates/404.html": {
+      "sha256": "fee6c2bb9813a4d5102c0cfce0fe161d9db869be34bf4ed2314901642017da2f",
+      "bytes": 357
+    },
+    "app/templates/algorithm_lab.html": {
+      "sha256": "2a0b4506955b692cb0fc700dc8eb69abdad3fd89201685f525356654ce69ecbc",
+      "bytes": 2998
+    },
+    "app/templates/base.html": {
+      "sha256": "0a62535a42dcd6017f1818a997459058c7a7b31e847e66f5669f509a13a60245",
+      "bytes": 2861
+    },
+    "app/templates/dashboard.html": {
+      "sha256": "36f82f93e971d5a9e78b5e309ad5acd5b921a38ba53f1b4d36d177f0d1daa34b",
+      "bytes": 4471
+    },
+    "app/templates/home.html": {
+      "sha256": "4d7afcf9bab74b70bf818443087df7c2e12d50e8dca2b83c7dd6e0cde9685955",
+      "bytes": 5103
+    },
+    "app/templates/items.html": {
+      "sha256": "5cdc84bbcbc4a7717e8f29977462479f243bd6cd49e797f3178f4f48fd358f0c",
+      "bytes": 2045
+    },
+    "app/templates/item_detail.html": {
+      "sha256": "ebeee5694da4013f909b39cedea94c29cf33ce09c1471cf53ba06246621b6e0e",
+      "bytes": 3228
+    },
+    "app/templates/login.html": {
+      "sha256": "856d37876298c2267efe87c495abeb08c13340e8e63855411b2b1c128ab6021f",
+      "bytes": 1362
+    },
+    "app/templates/matches.html": {
+      "sha256": "f757f871ddcc444357561a9a5c2ac14cbcfed167f1c40462cc26431e3a8e7b59",
+      "bytes": 3476
+    },
+    "app/templates/publish.html": {
+      "sha256": "f2a94bbc4815c6c8787541645968761e72c7b4f85d7a0b575db28e15842c4485",
+      "bytes": 3294
+    },
+    "app/templates/register.html": {
+      "sha256": "a338dc3489ad1adb6ce67372897a98655ea0103410e57ab5d81f1fa4511f7e0f",
+      "bytes": 1690
+    },
+    "app/templates/_macros.html": {
+      "sha256": "38f535d93b3a60e8c496d2f9f92a2af14ede168764489cfe4d3db21c3fa3ffbd",
+      "bytes": 859
+    },
+    "campustrace/backend/manage.py": {
+      "sha256": "c574650b0e08f61b8c89d2a952fafb751c94f5bd6d70ada6870d802cf4a8a236",
+      "bytes": 317
+    },
+    "campustrace/backend/requirements.in": {
+      "sha256": "c5fe27f3af4cd13a59fbb9af185132a815e27e64053554c504a35d91eac3ef77",
+      "bytes": 296
+    },
+    "campustrace/backend/requirements.lock": {
+      "sha256": "f17dffbeadb517e639e18bdf3f336ed97f5d5a49ca3133929af6714399b048aa",
+      "bytes": 567
+    },
+    "campustrace/backend/apps/__init__.py": {
+      "sha256": "5f20e06faaa6286e437c4860ac06bbb710381c151db60d624de104a419f723c8",
+      "bytes": 39
+    },
+    "campustrace/backend/apps/accounts/apps.py": {
+      "sha256": "84179706b7f4eab77b9c24969a07561040e4b9f69d11e5a6799e421bc33e2732",
+      "bytes": 181
+    },
+    "campustrace/backend/apps/accounts/models.py": {
+      "sha256": "b9501a2383cd1e61ce9556de518d38e43ec3d7ce4b3f845b2c4018e585078b73",
+      "bytes": 1246
+    },
+    "campustrace/backend/apps/accounts/permissions.py": {
+      "sha256": "6675883f094fe8ecd950909138a367a9412b1d8d8cd9c1efb6475b4c2ba5f430",
+      "bytes": 452
+    },
+    "campustrace/backend/apps/accounts/serializers.py": {
+      "sha256": "3ec4c59abc381d29a4a9105e44110c306db8508c792d1dc3fdee5710ab067b53",
+      "bytes": 1645
+    },
+    "campustrace/backend/apps/accounts/urls.py": {
+      "sha256": "893cd05fd0e0ae39a5fdb5fa88129c8bda4d3e3a8899f10d8d13f4ae39814d1d",
+      "bytes": 397
+    },
+    "campustrace/backend/apps/accounts/views.py": {
+      "sha256": "1b8da90af684529c431181f99d55eb4fbc2ddda2afeabb0028ba939003a450db",
+      "bytes": 3141
+    },
+    "campustrace/backend/apps/accounts/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "campustrace/backend/apps/accounts/migrations/0001_initial.py": {
+      "sha256": "8393f95ce8fe3cca2f3fc8eacf08f1f8cc65ec5833c61335fb53f2e36db15325",
+      "bytes": 3738
+    },
+    "campustrace/backend/apps/accounts/migrations/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "campustrace/backend/apps/administration/apps.py": {
+      "sha256": "c391fe9152ce687f7d585091b92fb0e791e9ed68cf2547bdd58df71ef8aaeee2",
+      "bytes": 199
+    },
+    "campustrace/backend/apps/administration/middleware.py": {
+      "sha256": "53db3ab7885a95866d3157fca766a51df697e8e7400f365f99952a11cd2acf0a",
+      "bytes": 412
+    },
+    "campustrace/backend/apps/administration/models.py": {
+      "sha256": "b858182dfe346ad6a634712c7eeb1decc5178c860fec6463ae26c38768d75a40",
+      "bytes": 2294
+    },
+    "campustrace/backend/apps/administration/serializers.py": {
+      "sha256": "71690e137e15c52a78450fbc0e1e5eea48addeef5297b054cd500326ee783d13",
+      "bytes": 3636
+    },
+    "campustrace/backend/apps/administration/urls.py": {
+      "sha256": "d9b78d28d171c5f56c981eadac3a71981b0012e1a09a979ea82d10843ef68f39",
+      "bytes": 1069
+    },
+    "campustrace/backend/apps/administration/views.py": {
+      "sha256": "40408599fe19910431f17f5818a769af4485a71c8a2b59fb16af56a2f9d587a0",
+      "bytes": 7166
+    },
+    "campustrace/backend/apps/administration/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "campustrace/backend/apps/administration/management/__init__.py": {
+      "sha256": "fe0deaa0dbe550134ded69c9f81a054242f57c75d59e3f10463102ab2a6c3e7c",
+      "bytes": 28
+    },
+    "campustrace/backend/apps/administration/management/commands/audit_release.py": {
+      "sha256": "f496ce3ff284d1b006140c123f4bca55913ae9aec213d11079a63a8cd7d88b2b",
+      "bytes": 12286
+    },
+    "campustrace/backend/apps/administration/management/commands/__init__.py": {
+      "sha256": "2623c762fbe7a8373924b24ce75df8abf38d45ee2f4c553308f8307f7daf2318",
+      "bytes": 40
+    },
+    "campustrace/backend/apps/administration/migrations/0001_initial.py": {
+      "sha256": "d1ba7e4592ef236efcea84296aa89d4993e61e67cac3a9875d3abc5f883187a1",
+      "bytes": 3522
+    },
+    "campustrace/backend/apps/administration/migrations/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "campustrace/backend/apps/claims/apps.py": {
+      "sha256": "0e791b1200016855490163f3acbf27052def7b2cb41a0ccc5b2e0257e960d54e",
+      "bytes": 186
+    },
+    "campustrace/backend/apps/claims/models.py": {
+      "sha256": "2ee6c936aaaef46f5eb253c22bb0018f1f3367935217d1e06dec2e2cad55cc7c",
+      "bytes": 4310
+    },
+    "campustrace/backend/apps/claims/serializers.py": {
+      "sha256": "a7baf2534495b6aa58fc60f54c1b08f47bf35efd1d0553890d15865749594dd9",
+      "bytes": 4675
+    },
+    "campustrace/backend/apps/claims/services.py": {
+      "sha256": "6dde3fa3a7d07b6670d4eda4ee691ce54f337faee05fcf5f6b2937754b52bfa7",
+      "bytes": 14244
+    },
+    "campustrace/backend/apps/claims/urls.py": {
+      "sha256": "2cb5609114e70ffe4d28235c72afa8488d47c1412cef7ee540466a9ad6a9e914",
+      "bytes": 186
+    },
+    "campustrace/backend/apps/claims/views.py": {
+      "sha256": "494e1966798938124cd2f2e106c6153cd11951c0a850a5e1d2b9dd851aee36da",
+      "bytes": 4879
+    },
+    "campustrace/backend/apps/claims/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "campustrace/backend/apps/claims/migrations/0001_initial.py": {
+      "sha256": "5cb40cee6389afed65297a0892b08dfe7dd7a2d798f17e22b38cb208950e2e52",
+      "bytes": 5778
+    },
+    "campustrace/backend/apps/claims/migrations/0002_claim_direct_handover.py": {
+      "sha256": "3fff393963c5bcac6b6aeb98049abe0fb1079ad1a8a3c137259441fc6df987e1",
+      "bytes": 818
+    },
+    "campustrace/backend/apps/claims/migrations/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "campustrace/backend/apps/content/apps.py": {
+      "sha256": "8fe43793050ea3c06dfca862571e93604a6e1c94c8ecf349eceb3a4eec67b934",
+      "bytes": 185
+    },
+    "campustrace/backend/apps/content/models.py": {
+      "sha256": "a632c8cd1dad91d458708650060cbe62e794cb7c47ce889c0c1366e3ec45e3dd",
+      "bytes": 1129
+    },
+    "campustrace/backend/apps/content/serializers.py": {
+      "sha256": "e18d3715c4902ac3d2bb1ed9f788b2d7023852c886ff2a7d8395c3bcbb81326e",
+      "bytes": 464
+    },
+    "campustrace/backend/apps/content/urls.py": {
+      "sha256": "3b22f0f2fcde506e0b8c934fc3ed44cd44cf84aae91219ae1bc0ea798bf3dcaf",
+      "bytes": 309
+    },
+    "campustrace/backend/apps/content/views.py": {
+      "sha256": "cc3e37276e1d79523c6c199e250215142ce98d3d30d16460d8b6f5ba63430dd1",
+      "bytes": 860
+    },
+    "campustrace/backend/apps/content/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "campustrace/backend/apps/content/migrations/0001_initial.py": {
+      "sha256": "74e598e6b23086880e59ff079aa99dac0b74cca967ba0b31a3e32189a7b086cc",
+      "bytes": 3578
+    },
+    "campustrace/backend/apps/content/migrations/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "campustrace/backend/apps/items/apps.py": {
+      "sha256": "f1cf7bfefd3ec763e347ffd18bb9323eb8765cfa08a4310537f06a0b15272980",
+      "bytes": 181
+    },
+    "campustrace/backend/apps/items/media.py": {
+      "sha256": "8129cdf4f1558bc759fa4b6d7ef0629e72fb2ab9fda3bf482541dfa8273ef8af",
+      "bytes": 7824
+    },
+    "campustrace/backend/apps/items/models.py": {
+      "sha256": "64fd3ae6bc8c5b3d15baf34f0f1b3e2e8db750295758fc17be3dc18524be3213",
+      "bytes": 8506
+    },
+    "campustrace/backend/apps/items/moderation.py": {
+      "sha256": "173af85ddc35e3be760e79ba188fef318f812e36f9a49ac2f040f475ba19eaa1",
+      "bytes": 2069
+    },
+    "campustrace/backend/apps/items/serializers.py": {
+      "sha256": "72fc06f99e17c3a79b6089744d63eaacec6b0424022b900f484c0d72a0821588",
+      "bytes": 17211
+    },
+    "campustrace/backend/apps/items/services.py": {
+      "sha256": "7a56254ff84fed8c1285dc124e99049b30ecb5be87b4fbd91b0a6a82c00e36db",
+      "bytes": 12763
+    },
+    "campustrace/backend/apps/items/urls.py": {
+      "sha256": "d14d58a3fa96a48d15b9ff4c2f703a8c2453877b5498d3b54f766320fd203fa9",
+      "bytes": 598
+    },
+    "campustrace/backend/apps/items/views.py": {
+      "sha256": "8a8014eee10daae93d49abaebb3fbc5662d047e165b56069273d360bf94c67f6",
+      "bytes": 15976
+    },
+    "campustrace/backend/apps/items/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "campustrace/backend/apps/items/management/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "campustrace/backend/apps/items/management/commands/auto_review_pending.py": {
+      "sha256": "b1d0647005af72995e78a623da006f6deafeeb33386912c40db11aeb99418580",
+      "bytes": 1029
+    },
+    "campustrace/backend/apps/items/management/commands/seed_demo.py": {
+      "sha256": "5cd000a6b7204667e205fa368ccdfd0ddf3cac57ed96847eadbbc0bbaf1980ad",
+      "bytes": 30346
+    },
+    "campustrace/backend/apps/items/management/commands/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "campustrace/backend/apps/items/migrations/0001_initial.py": {
+      "sha256": "71d5af0c7addc68608186c91bad8e006fd28e2ff136e13497f983f8bead13f1d",
+      "bytes": 8259
+    },
+    "campustrace/backend/apps/items/migrations/0002_item_coordinate_system.py": {
+      "sha256": "1e81edea563b7a41dee1123410983ba9e8eb66ca71c4ca1073323004eb91f3c7",
+      "bytes": 430
+    },
+    "campustrace/backend/apps/items/migrations/0003_itemlocationcandidate.py": {
+      "sha256": "eacaaff1cce733c14e660517eb09c92d7730d4b3a27c5aea5e46a02f67ca1b25",
+      "bytes": 2047
+    },
+    "campustrace/backend/apps/items/migrations/0004_itemcoordinatecandidate.py": {
+      "sha256": "6f0cfb2352ef37d2bc0300f6d21ffa1b387f44195e0818b382b10655f3a4ba38",
+      "bytes": 1586
+    },
+    "campustrace/backend/apps/items/migrations/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "campustrace/backend/apps/matching/apps.py": {
+      "sha256": "c41b42f7da59018277f1ade1d10e85e4088b27885ef7c059d086b0db8a6e1b4e",
+      "bytes": 187
+    },
+    "campustrace/backend/apps/matching/engine.py": {
+      "sha256": "9371df9c3ac5f3a09a283b3b7e7a24f27456871521ffad62699e1f644275e6db",
+      "bytes": 24975
+    },
+    "campustrace/backend/apps/matching/models.py": {
+      "sha256": "43eb285f79ff8cb0a9dd898e9836853f287b530ab059ae35d21000e410ad52c8",
+      "bytes": 5005
+    },
+    "campustrace/backend/apps/matching/serializers.py": {
+      "sha256": "40080dc52d8fdaad4f76ea7c3bfff94193e1cee719786ea0fa3042b84d8a3fec",
+      "bytes": 1282
+    },
+    "campustrace/backend/apps/matching/services.py": {
+      "sha256": "f7e9f5cd3c8bc45b3654bc9a312ec17864df47d64bfb7de805965d04bb206e9d",
+      "bytes": 7465
+    },
+    "campustrace/backend/apps/matching/urls.py": {
+      "sha256": "283751f6a584244124245d2aa566aeaab5a38227ebf186336826dc128a4cafa6",
+      "bytes": 317
+    },
+    "campustrace/backend/apps/matching/views.py": {
+      "sha256": "4e6ae3e2ac84fedd942f05537f87260a8e33bc3c3a33227872d7bca6c2ca7a41",
+      "bytes": 5356
+    },
+    "campustrace/backend/apps/matching/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "campustrace/backend/apps/matching/management/__init__.py": {
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    "campustrace/backend/apps/matching/management/commands/evaluate_demo.py": {
+      "sha256": "6e288c5a8c6c6b1dc741cf4414ecf7d07ad54e0de0199d847c4bd8c6e593cd91",
+      "bytes": 11294
+    },
+    "campustrace/backend/apps/matching/management/commands/__init__.py": {
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    "campustrace/backend/apps/matching/migrations/0001_initial.py": {
+      "sha256": "e084e6f98567e66c1121b51152c6a27b7365a0b7cd1257614960200d47c363aa",
+      "bytes": 6429
+    },
+    "campustrace/backend/apps/matching/migrations/0002_benchmarkpair.py": {
+      "sha256": "23841caf2051f61e79d821cccc0d44aed8d3b5969e842736c07f291aee849fb2",
+      "bytes": 1380
+    },
+    "campustrace/backend/apps/matching/migrations/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "campustrace/backend/apps/messaging/apps.py": {
+      "sha256": "e221b1861f636a2a68ca76321c96fc8fcc54318df7965a1870b39d03dabcfe31",
+      "bytes": 189
+    },
+    "campustrace/backend/apps/messaging/models.py": {
+      "sha256": "a3ff383a669d88ddec4afb61a1a833988a937216d74c68ec02d2ab227533734d",
+      "bytes": 1499
+    },
+    "campustrace/backend/apps/messaging/serializers.py": {
+      "sha256": "d578b4cc5b1789f754488b10f35166e6daeb09b4681e8514ecbadc4d97baa452",
+      "bytes": 1024
+    },
+    "campustrace/backend/apps/messaging/urls.py": {
+      "sha256": "15895dfb0bbdeae74dc438ac42d24d687ea052b399fccda4dbc0cfdc6f42011b",
+      "bytes": 207
+    },
+    "campustrace/backend/apps/messaging/views.py": {
+      "sha256": "78fd25cb09c0406d8296773b5db7c6a7b2203fca85c81bdb80ce26fab5c0ff21",
+      "bytes": 2009
+    },
+    "campustrace/backend/apps/messaging/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "campustrace/backend/apps/messaging/migrations/0001_initial.py": {
+      "sha256": "c6c0d749876821f5d334c2d845910b8523dac41f605959137679afc30c00eeb4",
+      "bytes": 2819
+    },
+    "campustrace/backend/apps/messaging/migrations/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "campustrace/backend/apps/notifications/apps.py": {
+      "sha256": "863c11f1e9ee4781ddb58d9150b6ec51ccaa0a103c3fdc4149557d7afa41e6d1",
+      "bytes": 191
+    },
+    "campustrace/backend/apps/notifications/models.py": {
+      "sha256": "49ab5aa06c77a6db5a8e2a3784eb20c3bc643f3b6645dd2005fef239e25d0165",
+      "bytes": 706
+    },
+    "campustrace/backend/apps/notifications/serializers.py": {
+      "sha256": "1498908a81bd127396c6a0a6eb4a152d8722b4076f73371af84aa83ceab2be5d",
+      "bytes": 318
+    },
+    "campustrace/backend/apps/notifications/urls.py": {
+      "sha256": "8c6fc64a29eea6dd1920277cb50976aaf616360a3ea7a4aff59a634684d65c5c",
+      "bytes": 207
+    },
+    "campustrace/backend/apps/notifications/views.py": {
+      "sha256": "b7b94dfa8c46197df2e1407df5a36b514ffc266649421e9fd1ab3e938404a784",
+      "bytes": 1093
+    },
+    "campustrace/backend/apps/notifications/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "campustrace/backend/apps/notifications/migrations/0001_initial.py": {
+      "sha256": "48905f47bc2bf6df894ebb2ccf86189be787ba9e7142b99aed46856ef5edfec1",
+      "bytes": 1307
+    },
+    "campustrace/backend/apps/notifications/migrations/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "campustrace/backend/apps/stations/apps.py": {
+      "sha256": "cc24c3b81e3b2973951235d23d8d7ec9361ac540596d2fb48a76803caba7e564",
+      "bytes": 193
+    },
+    "campustrace/backend/apps/stations/models.py": {
+      "sha256": "158c4dd9f54d12a40ac440d5e2dc7e9d82478da709e4e4594a5ae4d3eddb1b2e",
+      "bytes": 5203
+    },
+    "campustrace/backend/apps/stations/scope.py": {
+      "sha256": "4c4e3ec7cdae00d18e0e35894946875b6a4ae0c81b73ead1a083bc17bda72a06",
+      "bytes": 550
+    },
+    "campustrace/backend/apps/stations/serializers.py": {
+      "sha256": "29bcfa9345a17019521b88e27891b262e5a7aca3d6ed2711d078910622c2622d",
+      "bytes": 522
+    },
+    "campustrace/backend/apps/stations/urls.py": {
+      "sha256": "f46e556d7ea73ea7c69dccd710436163af5d87be039afe6fc0e343a6019b63d5",
+      "bytes": 464
+    },
+    "campustrace/backend/apps/stations/views.py": {
+      "sha256": "18ea88ca4393d9620428f8389410b78d1b1c1c2051ba13789494f43930dde5ba",
+      "bytes": 5701
+    },
+    "campustrace/backend/apps/stations/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "campustrace/backend/apps/stations/management/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "campustrace/backend/apps/stations/management/commands/enrich_campuses.py": {
+      "sha256": "ad7d065bea1cd547c211c3f3cd4a18967ea1a9a266fbe60277a821f6c03f74ec",
+      "bytes": 7255
+    },
+    "campustrace/backend/apps/stations/management/commands/import_schools.py": {
+      "sha256": "75722aacf49781320e1c99d2e434a2a4c93226cc3ef5aaf1f5cceb548e020ee5",
+      "bytes": 3116
+    },
+    "campustrace/backend/apps/stations/management/commands/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "campustrace/backend/apps/stations/migrations/0001_initial.py": {
+      "sha256": "6f1a9f99d55de6b4972669357ce633c4bd12c292899e2f92e0f0cd256ecb370b",
+      "bytes": 3497
+    },
+    "campustrace/backend/apps/stations/migrations/0002_campus_school_campuslocation_campus_campus_school.py": {
+      "sha256": "e39acc54a443912925872eef8f574b144198ec43f56d49b9486e6c31443c8571",
+      "bytes": 2968
+    },
+    "campustrace/backend/apps/stations/migrations/0003_school_city_school_level_school_official_id_and_more.py": {
+      "sha256": "a1f1226c1c84b5655e7385f5c4b78cc721148d117e47f56f02c87b1dd8562ebe",
+      "bytes": 1266
+    },
+    "campustrace/backend/apps/stations/migrations/0004_campus_source_url_campus_verification_status_and_more.py": {
+      "sha256": "71d76b7a283c5f420f43d8fc69c83a56723a40535d268b893c5e85be94ab6d11",
+      "bytes": 2347
+    },
+    "campustrace/backend/apps/stations/migrations/0005_school_name_pinyin.py": {
+      "sha256": "c1e92915aabd149655fe4341f5013261d8953cdfb52c1955bd6faaba98fc0f27",
+      "bytes": 853
+    },
+    "campustrace/backend/apps/stations/migrations/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "campustrace/backend/config/api_urls.py": {
+      "sha256": "97ecd630d68a3d76ec8571d9000e187808d75d067e75250f1b184eb6d29c1059",
+      "bytes": 871
+    },
+    "campustrace/backend/config/asgi.py": {
+      "sha256": "b54d510d0819a4a7d4b8d1f04fb93df4d5bbf5afd30ce0a6f1c7ab91ff79022d",
+      "bytes": 166
+    },
+    "campustrace/backend/config/exceptions.py": {
+      "sha256": "257813c98cbf22f38e4d59c7278a7016b6e71f5164eba81de12171f2bc039ce0",
+      "bytes": 1497
+    },
+    "campustrace/backend/config/maps.py": {
+      "sha256": "418b788827e08e3e041d1b8990f882adec2e34c88c0531ed9999f082494ea3a5",
+      "bytes": 8360
+    },
+    "campustrace/backend/config/pagination.py": {
+      "sha256": "a8e427be68dbe756ad1d9f3394a39339c7b24552a72cdc6362830398b2e01378",
+      "bytes": 646
+    },
+    "campustrace/backend/config/serve.py": {
+      "sha256": "8488868dc0c325ffa6803241999a83eefa14b6e80646285a049d53ad833e804b",
+      "bytes": 736
+    },
+    "campustrace/backend/config/settings.py": {
+      "sha256": "8055722ce14e93e2f7142a873e0ca0bebd2aa30687b8ce5d06f9d871cfb41637",
+      "bytes": 5359
+    },
+    "campustrace/backend/config/urls.py": {
+      "sha256": "8bd78885d7bd95f63627733d1ee82c044945f108a28024bec83e0cc67f698abf",
+      "bytes": 741
+    },
+    "campustrace/backend/config/views.py": {
+      "sha256": "f3d8bc0e4b122457c97e6fd9d99ec770c5f2b8e3b6031d300bdaca3c96bc2984",
+      "bytes": 457
+    },
+    "campustrace/backend/config/wsgi.py": {
+      "sha256": "eb7f8735b681c167c367035512691ea8a41bf6986db9fc43c28c51f3841ecac4",
+      "bytes": 166
+    },
+    "campustrace/backend/config/__init__.py": {
+      "sha256": "03d2b75e441409e07bad343405e71c7e555930c0483f5ea98ff6ee34f6166583",
+      "bytes": 48
+    },
+    "campustrace/backend/tests/test_campus_catalog.py": {
+      "sha256": "916db924c0a319813f8979b1ea20f749d00502af7cd16da8fa413b57bdac97f8",
+      "bytes": 2180
+    },
+    "campustrace/backend/tests/test_campus_feedback.py": {
+      "sha256": "e1077de4a7214110149f9dddf72ed3457738b1e6e67dfc7d1a0840b371f63a22",
+      "bytes": 2455
+    },
+    "campustrace/backend/tests/test_campus_isolation.py": {
+      "sha256": "edeeaae15c6a737711f9c0fa8121ffee81c7ec3912cb03fd0fe82a68cf38573a",
+      "bytes": 9710
+    },
+    "campustrace/backend/tests/test_demo_seed.py": {
+      "sha256": "b069f5ee6add6876cd9fdbb986b69075efc5f33b66eafdc451d99dda29b4a3e1",
+      "bytes": 2707
+    },
+    "campustrace/backend/tests/test_exception_handler.py": {
+      "sha256": "4f060b92f9c702e626b34b0770e4d3fcf1520e468f4172fe61fc19650de8c181",
+      "bytes": 764
+    },
+    "campustrace/backend/tests/test_item_media.py": {
+      "sha256": "7820d0f6e087ad88c5719ee8d328a2a2445fad9193a81663bf5e2e7b630320fe",
+      "bytes": 4942
+    },
+    "campustrace/backend/tests/test_item_moderation.py": {
+      "sha256": "79e5f58f7c117c61bc78c98a0a3687ba55de2b44442dbebcb755d45d299de96f",
+      "bytes": 579
+    },
+    "campustrace/backend/tests/test_maps.py": {
+      "sha256": "3d990421a548875e105f617bca886c5020f799dfb2e5f93b0ff887ed6dc98b0c",
+      "bytes": 7072
+    },
+    "campustrace/backend/tests/test_matching_engine.py": {
+      "sha256": "68692449297ae4b91bf6e810cc716008072f7292eb89af029c739387b36fcd9c",
+      "bytes": 8943
+    },
+    "campustrace/backend/tests/test_portal_apis.py": {
+      "sha256": "094c5b7e52bbde09853c27da64bcca6682596384778e7baafbed698290ac1a03",
+      "bytes": 16750
+    },
+    "campustrace/backend/tests/test_school_search.py": {
+      "sha256": "617d444943d303db84ad03e54c349216a3f45f32c877730364edc36fe46b778e",
+      "bytes": 1880
+    },
+    "campustrace/backend/tests/test_workflows.py": {
+      "sha256": "945afe81f9d9b12788afb226230e047ebf6c4af3aaccf0b2731d5bf753b3ac34",
+      "bytes": 18417
+    },
+    "campustrace/frontend/index.html": {
+      "sha256": "c536b3b1daaca268a8f79a225817334298ca1a9252ed7e83bccb2bb77a2e1ea3",
+      "bytes": 569
+    },
+    "campustrace/frontend/package-lock.json": {
+      "sha256": "97138fd6157df5e3fcf6460063d0bf29d51a74ac0af9b026be9d4021b8b4e66a",
+      "bytes": 96212
+    },
+    "campustrace/frontend/package.json": {
+      "sha256": "44c7b36d476f1bc656e019defc9b3a5108a53cc3b867505759745dceaf041665",
+      "bytes": 753
+    },
+    "campustrace/frontend/playwright.config.ts": {
+      "sha256": "3e3036dc55819bb6857a3ac3d89fc39b4f9c3a0f19d5eebd542d2ec24e1cee56",
+      "bytes": 522
+    },
+    "campustrace/frontend/tsconfig.app.json": {
+      "sha256": "b3e4e2496a33a578ded89d74763b8e1d78a11c970325af981d3d4d2f5d82e6e7",
+      "bytes": 475
+    },
+    "campustrace/frontend/tsconfig.json": {
+      "sha256": "770b4140bbb581e2dfd9ea9946ffc9c75a1d86ba7d2db5f77c83e37cbdf9d808",
+      "bytes": 119
+    },
+    "campustrace/frontend/tsconfig.node.json": {
+      "sha256": "1bd81331c3f3394ff564b17c8aef818d47cc978e543cb88e187de7017f7742fa",
+      "bytes": 215
+    },
+    "campustrace/frontend/vite.config.ts": {
+      "sha256": "37e8bbee8e6bb847cae9eb036edc7e179bac36a098aecbb26991da3adea4af74",
+      "bytes": 1942
+    },
+    "campustrace/frontend/vitest.config.ts": {
+      "sha256": "6a1ee31a33bf8ebfdb9ec6b16e79b939efbed781409d213f7d0c444ea7fb6dbd",
+      "bytes": 288
+    },
+    "campustrace/frontend/src/App.vue": {
+      "sha256": "772805819475822e5586cce864ac5ee609f0fbeacd507c79d0db069a66e3b577",
+      "bytes": 4177
+    },
+    "campustrace/frontend/src/env.d.ts": {
+      "sha256": "b61ba723029bad40d8f46de302240fd24ce70dd3ff906d1822926ef179f69628",
+      "bytes": 198
+    },
+    "campustrace/frontend/src/main.ts": {
+      "sha256": "a51a7310d886be0d437162aeb6ade4a143bcf5da252ad09bf90b4f67c6128a42",
+      "bytes": 1152
+    },
+    "campustrace/frontend/src/api/amap.ts": {
+      "sha256": "d2341d6518d02806cd00f8bb7a1f665e2070dc5215058f07cec2551177e4d3ec",
+      "bytes": 981
+    },
+    "campustrace/frontend/src/api/client.ts": {
+      "sha256": "6d65ec759be6f9c31ce0e3cb3eec08605d57cf892d13fa154672827860e08937",
+      "bytes": 4223
+    },
+    "campustrace/frontend/src/components/AMapCampus.vue": {
+      "sha256": "88003eee141af9c4a689d0b0317947cff890810a3b757b5ae99fafa5b5d01cf3",
+      "bytes": 9097
+    },
+    "campustrace/frontend/src/components/AppIcon.vue": {
+      "sha256": "ff49206d395d4cedec7cc412a0cdf0567a92a5c2c741cea7b8b1aa755a3216ca",
+      "bytes": 1823
+    },
+    "campustrace/frontend/src/components/CampusPicker.vue": {
+      "sha256": "6e8e45b150771f262cc4b115d5838e807563e113e6149fd32828795a14441db4",
+      "bytes": 15854
+    },
+    "campustrace/frontend/src/components/CampusSketch.vue": {
+      "sha256": "0a4e8de006deeb814928bdfe459685d2428e04f7424ae349325a9e40f72296e1",
+      "bytes": 1456
+    },
+    "campustrace/frontend/src/components/DemoCampusMap.vue": {
+      "sha256": "4f6c491a60bdd2f304d1275300bd3c401d10d39eaea1799dde86ed2190f77c56",
+      "bytes": 8081
+    },
+    "campustrace/frontend/src/components/ItemVisual.vue": {
+      "sha256": "ae9c2128a54d6ed1ec63fcc95760e4d4bf4f99f2aa4ac5402b411a38ccf8c413",
+      "bytes": 3523
+    },
+    "campustrace/frontend/src/components/ThreeScene.vue": {
+      "sha256": "4ccaf005259249cceabecbc47e5daeeae40b47a2c0752c7b900d714e13495650",
+      "bytes": 11566
+    },
+    "campustrace/frontend/src/router/index.ts": {
+      "sha256": "2c703c226ca3f9e3bcc4348aebd7cb7690f24d7776a8fde8b913f2befc012406",
+      "bytes": 10912
+    },
+    "campustrace/frontend/src/stores/auth.ts": {
+      "sha256": "4887de6c221a40acd8d73d5da24dfb3e670f26e008893c1d9242bb30691187df",
+      "bytes": 1537
+    },
+    "campustrace/frontend/src/stores/campus.ts": {
+      "sha256": "bb6da1a1e0692e56564e327f2fba47686284b5d6ad0292478ca36453438c82ea",
+      "bytes": 610
+    },
+    "campustrace/frontend/src/styles/global.css": {
+      "sha256": "02cf3b0caa92098e66233901f4c453ce4bb2741b7274f74dfb0f608bfe7b7904",
+      "bytes": 10618
+    },
+    "campustrace/frontend/src/styles/tokens.css": {
+      "sha256": "2d0b1434ea251bb079a8d8d800aace7d709e5ddaeb4aaae2ea33ab6e843c09aa",
+      "bytes": 620
+    },
+    "campustrace/frontend/src/utils/itemCategories.ts": {
+      "sha256": "f0dd25d543c5bcc191a86f1aa11580aa8fe8186d0aca515033ca8130b7f1360b",
+      "bytes": 1212
+    },
+    "campustrace/frontend/src/views/FeaturePage.vue": {
+      "sha256": "960f8a3ec3aae3da90233aae5afbf37fd5b8d41132ee631c46e54c20239ac291",
+      "bytes": 3538
+    },
+    "campustrace/frontend/src/views/admin/AdminOverviewView.vue": {
+      "sha256": "c4f0cfb99e1a219ec1768bb9c9ff33c1251d7920ddc5f4f1c5d50c8ca927bff8",
+      "bytes": 6904
+    },
+    "campustrace/frontend/src/views/admin/AdminResourceView.vue": {
+      "sha256": "4b8197043308f0e4c8fadc52671c87c080abaa42cf0b77d3663787c74c0a7e46",
+      "bytes": 12219
+    },
+    "campustrace/frontend/src/views/public/CampusMapView.vue": {
+      "sha256": "aa6c92a2468700de21accc48de15ac050867f262c860e4c5b21b0dee86923541",
+      "bytes": 10313
+    },
+    "campustrace/frontend/src/views/public/HomeView.vue": {
+      "sha256": "b6b9b1d3f1a2190afa2d0a5af5764e2e687259b1c2b936b7c3f0f2689dcc4b53",
+      "bytes": 13740
+    },
+    "campustrace/frontend/src/views/public/ItemDetailView.vue": {
+      "sha256": "d64062d7c22793f7ad5c6bced3c71edf32ad4064e8f26252ed530f6d0d41d7b3",
+      "bytes": 7696
+    },
+    "campustrace/frontend/src/views/public/ItemGalleryView.vue": {
+      "sha256": "9884e3d42a44bec2cc74b3bc5d9dfa22eeaab68a1bccbd87cc53405ea71ec5b6",
+      "bytes": 11391
+    },
+    "campustrace/frontend/src/views/public/PublicContentView.vue": {
+      "sha256": "290e0a6de42aec4c5ee0c77fbb4fe7962b4c5664b5b6ed56760c516bab4e8ba4",
+      "bytes": 2153
+    },
+    "campustrace/frontend/src/views/public/SearchView.vue": {
+      "sha256": "4859eee00a69838f3048b3b539c181eb51d299ab9bc023db833f29fd9fca5321",
+      "bytes": 5185
+    },
+    "campustrace/frontend/src/views/public/StationDetailView.vue": {
+      "sha256": "b05eb0b31cbbb38b7ca09fd2b90f83267f73dc7cb8344b5ac5dc4602e7df8b1e",
+      "bytes": 3657
+    },
+    "campustrace/frontend/src/views/public/StationsView.vue": {
+      "sha256": "4bf088c6870c6e561cdd97c032b1653c3964f20059a5114b28e59eab1a783641",
+      "bytes": 2554
+    },
+    "campustrace/frontend/src/views/system/LoginView.vue": {
+      "sha256": "bf4f7804cb5cc539451a0bdc42cc98e44f2d7b67618b25f3b04d8af17ecd29b0",
+      "bytes": 5126
+    },
+    "campustrace/frontend/src/views/system/NotFoundView.vue": {
+      "sha256": "c3c1eb9919088196ed90e1e2eccd41afb88d3b9f39d321e5bbccb589d3cb7ce6",
+      "bytes": 1829
+    },
+    "campustrace/frontend/src/views/system/RecoveryView.vue": {
+      "sha256": "c58466e71b1323dd5e21e11c8352df58fc8e667e3e4cb65d48026d103a08756e",
+      "bytes": 2101
+    },
+    "campustrace/frontend/src/views/user/AccountHubView.vue": {
+      "sha256": "2e6e5f226d495a9afda08598302cfcd7dfc4b3712ae695cf4e3dbb747e0e5756",
+      "bytes": 13893
+    },
+    "campustrace/frontend/src/views/user/ClaimCreateView.vue": {
+      "sha256": "16bbee6b21236cdf4a2492c456285292a6dd79f4ce557ff00bfc78dfdb43f21b",
+      "bytes": 4373
+    },
+    "campustrace/frontend/src/views/user/ClaimDetailView.vue": {
+      "sha256": "9e11b016552498dbb75fe0434bb3fe380c230bcdbacb35a062a070d67cb25a79",
+      "bytes": 9577
+    },
+    "campustrace/frontend/src/views/user/ClaimsListView.vue": {
+      "sha256": "5cd9dcb9aceca02ba56f20a34855eb4ac2a929c03be35133be66918805f68b89",
+      "bytes": 2850
+    },
+    "campustrace/frontend/src/views/user/DraftsView.vue": {
+      "sha256": "581feb393437a93102f24a2d4713668986491d771b09b2a6ba1b283ee49efb95",
+      "bytes": 4688
+    },
+    "campustrace/frontend/src/views/user/HandoverView.vue": {
+      "sha256": "c5ae6738a686db1b963df1e406672b9f4096cc66909ffdca2b29abcbaae7d6e9",
+      "bytes": 3018
+    },
+    "campustrace/frontend/src/views/user/MatchCenterView.vue": {
+      "sha256": "b855f574a57f83cf939fc8dec2cf0bfa2a98559b75f1430093de2e46bb63ffa1",
+      "bytes": 5864
+    },
+    "campustrace/frontend/src/views/user/MatchCompareView.vue": {
+      "sha256": "0c1dd464a67ef8f3fb81337337defe2db0bd4c3f795bf1a2b42205843522c1fc",
+      "bytes": 6325
+    },
+    "campustrace/frontend/src/views/user/MatchReportView.vue": {
+      "sha256": "3a80ab448b00f01ed6127d7090ca37cf7bbe7a4bd46c59fafe1c062bcf2020d8",
+      "bytes": 6119
+    },
+    "campustrace/frontend/src/views/user/MessagesView.vue": {
+      "sha256": "c84d4b7f4e51905b47bbe5978bf77aeab39fea384126e33f31be7f8df50add55",
+      "bytes": 6545
+    },
+    "campustrace/frontend/src/views/user/NotificationsView.vue": {
+      "sha256": "7191d16de01f5c01d51f31edc97dbbad1004c49559f89618a2c819ebe4fed150",
+      "bytes": 3424
+    },
+    "campustrace/frontend/src/views/user/PublishView.vue": {
+      "sha256": "804e5a4b3b2e64502434e865578dde75d66a9822ed9337e5faccce813b76b376",
+      "bytes": 39129
+    },
+    "campustrace/frontend/tests/e2e/smoke.spec.ts": {
+      "sha256": "0d57ea3913f3e58db709d3dcf0f4a49669fb0d768b480ae0444ae807d7135643",
+      "bytes": 11397
+    },
+    "campustrace/frontend/tests/unit/amap-campus.spec.ts": {
+      "sha256": "4b328cbe0ab626361a9ed18cb771744633b80f6be99606540d99688dd6fd2ddf",
+      "bytes": 4406
+    },
+    "campustrace/frontend/tests/unit/api-client.spec.ts": {
+      "sha256": "bcdf6a98c6630275e75755d6946bc50d14b4d7bd17b035b0085fea2b3edc252b",
+      "bytes": 2943
+    },
+    "campustrace/frontend/tests/unit/app-icon.spec.ts": {
+      "sha256": "797793fcf02490e27155088b240fbb59441dd03d2657ca9c8703d6abde8789d1",
+      "bytes": 696
+    },
+    "campustrace/frontend/tests/unit/auth-store.spec.ts": {
+      "sha256": "6b78753b2d4ebec0077f5edae7af313c920be68beddcf2d96efab7a7932e5123",
+      "bytes": 1901
+    },
+    "campustrace/frontend/tests/unit/campus-picker.spec.ts": {
+      "sha256": "31112fa28e211ccf360b4c0ef3791842589939eff69ec57b81f103400388eb3e",
+      "bytes": 6821
+    },
+    "campustrace/frontend/tests/unit/campus-switch.spec.ts": {
+      "sha256": "27e834c09ec7cbd5b45117cdcb8abd3aa7a9d402112983fce60a19b4d437ef38",
+      "bytes": 808
+    },
+    "campustrace/frontend/tests/unit/home-view.spec.ts": {
+      "sha256": "bbec78d895bd9c0008d8fe2a4fe71004df56544c7fcbe99c7da3241ce294440a",
+      "bytes": 2803
+    },
+    "campustrace/frontend/tests/unit/item-visual.spec.ts": {
+      "sha256": "aeb887dc2853d11ff523ff5658064135f3d230c259c47e0d2063ce898868f55b",
+      "bytes": 1988
+    },
+    "campustrace/frontend/tests/unit/publish-view.spec.ts": {
+      "sha256": "455e9a2fc9f26d5be75465f27e576e37eb43d2c4c5e813460fc68bf4c1db13fb",
+      "bytes": 8083
+    },
+    "campustrace/frontend/tests/unit/three-scene.spec.ts": {
+      "sha256": "2636a6c812e542820e13983527b8232628010e615d64a944e35142b9536d223b",
+      "bytes": 1316
+    }
+  }
+}
