@@ -1,0 +1,31 @@
+{
+  "snapshots": [
+    {
+      "id": "2026-10-09-frontend",
+      "verified_files": 55,
+      "mismatches": 0
+    },
+    {
+      "id": "2026-10-15-framework",
+      "verified_files": 200,
+      "mismatches": 0
+    },
+    {
+      "id": "2026-11-15-frontend",
+      "verified_files": 71,
+      "mismatches": 0
+    },
+    {
+      "id": "local-checkpoint-a",
+      "verified_files": 222,
+      "mismatches": 0
+    },
+    {
+      "id": "local-checkpoint-b",
+      "verified_files": 222,
+      "mismatches": 0
+    }
+  ],
+  "total_verified": 770,
+  "scope": "逐一核验Git暂存区实际字节与原始源码快照清单一致，不是仅核对工作目录"
+}

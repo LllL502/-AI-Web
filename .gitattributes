@@ -9,3 +9,6 @@
 *.webp binary
 *.wav binary
 *.xls binary
+
+# Historical source bytes follow their original manifests.
+history/versions/** -text
