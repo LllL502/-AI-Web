@@ -1,0 +1,300 @@
+{
+  "id": "2026-11-15-frontend",
+  "scope": [
+    "original-frontend"
+  ],
+  "source_evidence": {
+    "archive_sha256": "79cc70b655e626a0238f0fde5671e099d15c43b82f88b9b2d4895ea5272f71ef",
+    "delivery_record": "01a1df3c-ef08-7c01-993c-93e8b1977de4",
+    "reported_delivery_at": "2026-11-15T20:56:32+08:00",
+    "baseline_check": "原始基线83个文件哈希全部一致；本次仅归档源码文本"
+  },
+  "archived_at": "2026-11-17T22:24:09.332963+08:00",
+  "limitations": "原样恢复留存源码文本；未包含照片、构建产物、运行数据库、依赖及密钥。局部前端版本不代表当时完整项目状态。历史时间依据不是本次Git提交时间。",
+  "files": {
+    "original-frontend/index.html": {
+      "sha256": "c536b3b1daaca268a8f79a225817334298ca1a9252ed7e83bccb2bb77a2e1ea3",
+      "bytes": 569
+    },
+    "original-frontend/package-lock.json": {
+      "sha256": "97138fd6157df5e3fcf6460063d0bf29d51a74ac0af9b026be9d4021b8b4e66a",
+      "bytes": 96212
+    },
+    "original-frontend/package.json": {
+      "sha256": "44c7b36d476f1bc656e019defc9b3a5108a53cc3b867505759745dceaf041665",
+      "bytes": 753
+    },
+    "original-frontend/playwright.config.ts": {
+      "sha256": "3e3036dc55819bb6857a3ac3d89fc39b4f9c3a0f19d5eebd542d2ec24e1cee56",
+      "bytes": 522
+    },
+    "original-frontend/tsconfig.app.json": {
+      "sha256": "b3e4e2496a33a578ded89d74763b8e1d78a11c970325af981d3d4d2f5d82e6e7",
+      "bytes": 475
+    },
+    "original-frontend/tsconfig.json": {
+      "sha256": "770b4140bbb581e2dfd9ea9946ffc9c75a1d86ba7d2db5f77c83e37cbdf9d808",
+      "bytes": 119
+    },
+    "original-frontend/tsconfig.node.json": {
+      "sha256": "1bd81331c3f3394ff564b17c8aef818d47cc978e543cb88e187de7017f7742fa",
+      "bytes": 215
+    },
+    "original-frontend/vite.config.ts": {
+      "sha256": "37e8bbee8e6bb847cae9eb036edc7e179bac36a098aecbb26991da3adea4af74",
+      "bytes": 1942
+    },
+    "original-frontend/vitest.config.ts": {
+      "sha256": "6a1ee31a33bf8ebfdb9ec6b16e79b939efbed781409d213f7d0c444ea7fb6dbd",
+      "bytes": 288
+    },
+    "original-frontend/src/App.vue": {
+      "sha256": "0eb89add119913ca2dd3e10d7df38c200dac73a6719debb42ca819067df48742",
+      "bytes": 3765
+    },
+    "original-frontend/src/env.d.ts": {
+      "sha256": "b61ba723029bad40d8f46de302240fd24ce70dd3ff906d1822926ef179f69628",
+      "bytes": 198
+    },
+    "original-frontend/src/main.ts": {
+      "sha256": "ebb692c27f7601d1f81914c726c47381caefaddb06b5d3cd7766a577f7580be0",
+      "bytes": 1182
+    },
+    "original-frontend/src/api/amap.ts": {
+      "sha256": "d2341d6518d02806cd00f8bb7a1f665e2070dc5215058f07cec2551177e4d3ec",
+      "bytes": 981
+    },
+    "original-frontend/src/api/client.ts": {
+      "sha256": "582c48cbaa1cdb06b5f1e3285fa24f43780364baba73ceb3929e789dae7dc7a7",
+      "bytes": 4381
+    },
+    "original-frontend/src/components/AMapCampus.vue": {
+      "sha256": "88003eee141af9c4a689d0b0317947cff890810a3b757b5ae99fafa5b5d01cf3",
+      "bytes": 9097
+    },
+    "original-frontend/src/components/AppIcon.vue": {
+      "sha256": "ff49206d395d4cedec7cc412a0cdf0567a92a5c2c741cea7b8b1aa755a3216ca",
+      "bytes": 1823
+    },
+    "original-frontend/src/components/CampusPicker.vue": {
+      "sha256": "6e8e45b150771f262cc4b115d5838e807563e113e6149fd32828795a14441db4",
+      "bytes": 15854
+    },
+    "original-frontend/src/components/CampusSketch.vue": {
+      "sha256": "0a4e8de006deeb814928bdfe459685d2428e04f7424ae349325a9e40f72296e1",
+      "bytes": 1456
+    },
+    "original-frontend/src/components/DemoCampusMap.vue": {
+      "sha256": "4f6c491a60bdd2f304d1275300bd3c401d10d39eaea1799dde86ed2190f77c56",
+      "bytes": 8081
+    },
+    "original-frontend/src/components/ItemVisual.vue": {
+      "sha256": "ae9c2128a54d6ed1ec63fcc95760e4d4bf4f99f2aa4ac5402b411a38ccf8c413",
+      "bytes": 3523
+    },
+    "original-frontend/src/components/ThreeScene.vue": {
+      "sha256": "4ccaf005259249cceabecbc47e5daeeae40b47a2c0752c7b900d714e13495650",
+      "bytes": 11566
+    },
+    "original-frontend/src/router/index.ts": {
+      "sha256": "f563a83b3c8158b8a4b111a193bf529c564df45de71cc8e97293bba6f0a9a72e",
+      "bytes": 11466
+    },
+    "original-frontend/src/stores/auth.ts": {
+      "sha256": "4887de6c221a40acd8d73d5da24dfb3e670f26e008893c1d9242bb30691187df",
+      "bytes": 1537
+    },
+    "original-frontend/src/stores/campus.ts": {
+      "sha256": "3c4f4d66ad9aafd254c4fb2425913b34f25f690363244335517a781db70d432e",
+      "bytes": 900
+    },
+    "original-frontend/src/styles/global.css": {
+      "sha256": "b416465a69d93bcd6b4459e448c783d477db3610303ba3101476a4545c8bd7a0",
+      "bytes": 10656
+    },
+    "original-frontend/src/styles/refresh.css": {
+      "sha256": "af0f132814a56d522699051cc6536bf79640391b72bfbe5dc15101730c440bdb",
+      "bytes": 9775
+    },
+    "original-frontend/src/styles/tokens.css": {
+      "sha256": "0257cf8b2f21bf3596640c6f07fe554a5dd48e049a8cfa67d2cbc1f783788f94",
+      "bytes": 620
+    },
+    "original-frontend/src/utils/itemCategories.ts": {
+      "sha256": "f0dd25d543c5bcc191a86f1aa11580aa8fe8186d0aca515033ca8130b7f1360b",
+      "bytes": 1212
+    },
+    "original-frontend/src/views/FeaturePage.vue": {
+      "sha256": "960f8a3ec3aae3da90233aae5afbf37fd5b8d41132ee631c46e54c20239ac291",
+      "bytes": 3538
+    },
+    "original-frontend/src/views/admin/AdminOverviewView.vue": {
+      "sha256": "45eeb87143655e565f0401e607586406df1b53befd3699323241ecc21b95a1f7",
+      "bytes": 6977
+    },
+    "original-frontend/src/views/admin/AdminResourceView.vue": {
+      "sha256": "4b8197043308f0e4c8fadc52671c87c080abaa42cf0b77d3663787c74c0a7e46",
+      "bytes": 12219
+    },
+    "original-frontend/src/views/admin/StationManagementView.vue": {
+      "sha256": "202d78e5e8e1e9e5f2b4e2fe293dc922c6ce7f6fdfdbbe1ac8c513167873707c",
+      "bytes": 10676
+    },
+    "original-frontend/src/views/public/CampusMapView.vue": {
+      "sha256": "aa6c92a2468700de21accc48de15ac050867f262c860e4c5b21b0dee86923541",
+      "bytes": 10313
+    },
+    "original-frontend/src/views/public/HomeView.vue": {
+      "sha256": "91981d2bf3f4e74bc20f7954d81fde920bfdd771eeee95bccff2503970aac4a4",
+      "bytes": 14083
+    },
+    "original-frontend/src/views/public/ItemDetailView.vue": {
+      "sha256": "d64062d7c22793f7ad5c6bced3c71edf32ad4064e8f26252ed530f6d0d41d7b3",
+      "bytes": 7696
+    },
+    "original-frontend/src/views/public/ItemGalleryView.vue": {
+      "sha256": "9884e3d42a44bec2cc74b3bc5d9dfa22eeaab68a1bccbd87cc53405ea71ec5b6",
+      "bytes": 11391
+    },
+    "original-frontend/src/views/public/PublicContentView.vue": {
+      "sha256": "290e0a6de42aec4c5ee0c77fbb4fe7962b4c5664b5b6ed56760c516bab4e8ba4",
+      "bytes": 2153
+    },
+    "original-frontend/src/views/public/SearchView.vue": {
+      "sha256": "4859eee00a69838f3048b3b539c181eb51d299ab9bc023db833f29fd9fca5321",
+      "bytes": 5185
+    },
+    "original-frontend/src/views/public/StationApplicationView.vue": {
+      "sha256": "50dacd1b0f3103365e3cd5cbafa6d28ca788b065ced1610f2e8a0f163eecdd08",
+      "bytes": 3209
+    },
+    "original-frontend/src/views/public/StationDetailView.vue": {
+      "sha256": "ba5ae560b6bacbd91486e1d338247245c15825ba5088987004c33004cdbd6d68",
+      "bytes": 3983
+    },
+    "original-frontend/src/views/public/StationsView.vue": {
+      "sha256": "7d3c4ce01f2b13fcb2889926e003fd55d222677c9f2aa3d27a0234e54ee6c35a",
+      "bytes": 3174
+    },
+    "original-frontend/src/views/system/LoginView.vue": {
+      "sha256": "d8b246cf486cbf8d61e7d23cd96b0a01f5c9588357d72cec2734816c74a01160",
+      "bytes": 5126
+    },
+    "original-frontend/src/views/system/NotFoundView.vue": {
+      "sha256": "c3c1eb9919088196ed90e1e2eccd41afb88d3b9f39d321e5bbccb589d3cb7ce6",
+      "bytes": 1829
+    },
+    "original-frontend/src/views/system/RecoveryView.vue": {
+      "sha256": "c58466e71b1323dd5e21e11c8352df58fc8e667e3e4cb65d48026d103a08756e",
+      "bytes": 2101
+    },
+    "original-frontend/src/views/user/AccountHubView.vue": {
+      "sha256": "19a666ad03e1d1e8c227a86150952a70d1edbba08f7b6a116e8d83a06df34b6c",
+      "bytes": 14248
+    },
+    "original-frontend/src/views/user/AssistantView.vue": {
+      "sha256": "b6161974f0e1acb5a203bb91f4d114808d9ac317a3aa400b20aa509b161925d9",
+      "bytes": 20934
+    },
+    "original-frontend/src/views/user/ClaimCreateView.vue": {
+      "sha256": "16bbee6b21236cdf4a2492c456285292a6dd79f4ce557ff00bfc78dfdb43f21b",
+      "bytes": 4373
+    },
+    "original-frontend/src/views/user/ClaimDetailView.vue": {
+      "sha256": "d3c6b342fffa114758224edfa2dd740417e2fc4c5fc4156c01cb2b1d2a22c23d",
+      "bytes": 12205
+    },
+    "original-frontend/src/views/user/ClaimsListView.vue": {
+      "sha256": "f844b655a17757046c17f6288b1e1e32ce5d6b36235639a6ed82c5c6c4a9e859",
+      "bytes": 4379
+    },
+    "original-frontend/src/views/user/DraftsView.vue": {
+      "sha256": "581feb393437a93102f24a2d4713668986491d771b09b2a6ba1b283ee49efb95",
+      "bytes": 4688
+    },
+    "original-frontend/src/views/user/HandoverView.vue": {
+      "sha256": "c5ae6738a686db1b963df1e406672b9f4096cc66909ffdca2b29abcbaae7d6e9",
+      "bytes": 3018
+    },
+    "original-frontend/src/views/user/MatchCenterView.vue": {
+      "sha256": "b855f574a57f83cf939fc8dec2cf0bfa2a98559b75f1430093de2e46bb63ffa1",
+      "bytes": 5864
+    },
+    "original-frontend/src/views/user/MatchCompareView.vue": {
+      "sha256": "0c1dd464a67ef8f3fb81337337defe2db0bd4c3f795bf1a2b42205843522c1fc",
+      "bytes": 6325
+    },
+    "original-frontend/src/views/user/MatchReportView.vue": {
+      "sha256": "3a80ab448b00f01ed6127d7090ca37cf7bbe7a4bd46c59fafe1c062bcf2020d8",
+      "bytes": 6119
+    },
+    "original-frontend/src/views/user/MessagesView.vue": {
+      "sha256": "c84d4b7f4e51905b47bbe5978bf77aeab39fea384126e33f31be7f8df50add55",
+      "bytes": 6545
+    },
+    "original-frontend/src/views/user/NotificationsView.vue": {
+      "sha256": "7191d16de01f5c01d51f31edc97dbbad1004c49559f89618a2c819ebe4fed150",
+      "bytes": 3424
+    },
+    "original-frontend/src/views/user/PublishView.vue": {
+      "sha256": "4ee6c0aba44301f9aba284e24c784c8bac243dc60c6c320270b1a819342d4732",
+      "bytes": 39168
+    },
+    "original-frontend/tests/e2e/local-ai.spec.ts": {
+      "sha256": "ca76f5f3ba83c0bd53a0add693fa6fafcdcbd459c7955e23a1b8b8c645b5cda9",
+      "bytes": 2032
+    },
+    "original-frontend/tests/e2e/refresh-layout.spec.ts": {
+      "sha256": "155562b22adb28ce4324ad24c843f61db5ba3f9caefb76f57821263e7eb2c8fc",
+      "bytes": 1264
+    },
+    "original-frontend/tests/e2e/smoke.spec.ts": {
+      "sha256": "0d57ea3913f3e58db709d3dcf0f4a49669fb0d768b480ae0444ae807d7135643",
+      "bytes": 11397
+    },
+    "original-frontend/tests/unit/amap-campus.spec.ts": {
+      "sha256": "4b328cbe0ab626361a9ed18cb771744633b80f6be99606540d99688dd6fd2ddf",
+      "bytes": 4406
+    },
+    "original-frontend/tests/unit/api-client.spec.ts": {
+      "sha256": "c22cbd42b29f2caac00b6c91b3a4fd6a1a1441fb269bac9d0ec1048dcf8516fd",
+      "bytes": 3317
+    },
+    "original-frontend/tests/unit/app-icon.spec.ts": {
+      "sha256": "797793fcf02490e27155088b240fbb59441dd03d2657ca9c8703d6abde8789d1",
+      "bytes": 696
+    },
+    "original-frontend/tests/unit/assistant-view.spec.ts": {
+      "sha256": "d37f6754709902b4705f88b44c19f42403d0ff3daeaf681219db9c1047d1a3e8",
+      "bytes": 5577
+    },
+    "original-frontend/tests/unit/auth-store.spec.ts": {
+      "sha256": "6b78753b2d4ebec0077f5edae7af313c920be68beddcf2d96efab7a7932e5123",
+      "bytes": 1901
+    },
+    "original-frontend/tests/unit/campus-picker.spec.ts": {
+      "sha256": "31112fa28e211ccf360b4c0ef3791842589939eff69ec57b81f103400388eb3e",
+      "bytes": 6821
+    },
+    "original-frontend/tests/unit/campus-switch.spec.ts": {
+      "sha256": "e6ce387fb3789693ced1f4dff859352f72df6c506d1b78fe9d0495abe0ce2f07",
+      "bytes": 889
+    },
+    "original-frontend/tests/unit/home-view.spec.ts": {
+      "sha256": "bbec78d895bd9c0008d8fe2a4fe71004df56544c7fcbe99c7da3241ce294440a",
+      "bytes": 2803
+    },
+    "original-frontend/tests/unit/item-visual.spec.ts": {
+      "sha256": "aeb887dc2853d11ff523ff5658064135f3d230c259c47e0d2063ce898868f55b",
+      "bytes": 1988
+    },
+    "original-frontend/tests/unit/publish-view.spec.ts": {
+      "sha256": "455e9a2fc9f26d5be75465f27e576e37eb43d2c4c5e813460fc68bf4c1db13fb",
+      "bytes": 8083
+    },
+    "original-frontend/tests/unit/three-scene.spec.ts": {
+      "sha256": "2636a6c812e542820e13983527b8232628010e615d64a944e35142b9536d223b",
+      "bytes": 1316
+    }
+  }
+}
