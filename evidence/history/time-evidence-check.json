@@ -1,0 +1,67 @@
+{
+  "record_times": [
+    {
+      "record_id": "01a1dfb2-bbbe-7bf1-bb8f-04ba5cc9916c",
+      "started_at_unix": 1794754395,
+      "completed_at_unix": 1794755214,
+      "completed_at_china": "2026-11-15T23:06:54+08:00"
+    },
+    {
+      "record_id": "01a1dfa7-2594-77a2-848b-c336483f1e43",
+      "started_at_unix": 1794753635,
+      "completed_at_unix": 1794754060,
+      "completed_at_china": "2026-11-15T22:47:40+08:00"
+    },
+    {
+      "record_id": "01a1df3c-ef08-7c01-993c-93e8b1977de4",
+      "started_at_unix": 1794746675,
+      "completed_at_unix": 1794747392,
+      "completed_at_china": "2026-11-15T20:56:32+08:00"
+    },
+    {
+      "record_id": "01a1e87b-bf80-7080-89ea-e3727efbc1d6",
+      "started_at_unix": 1794901786,
+      "completed_at_unix": 1794903011,
+      "completed_at_china": "2026-11-17T16:10:11+08:00"
+    }
+  ],
+  "frontend_baseline": {
+    "id": "xunji-frontend-20261115-v1",
+    "matched": 83,
+    "missing": [],
+    "different": [],
+    "stored_manifest_sha256": "8f0e80db15507c035a2d2409854d313d5a3190afeb5e598801f01ecf69dd0147"
+  },
+  "archives": [
+    {
+      "file": "CampusTrace_完整工程归档_20261015.zip",
+      "bytes": 347587998,
+      "sha256_now": "52e4f84ff190a4c966e3b36873b9125e71290985fadc6b535e34e2fe4e3a4a78",
+      "filesystem_modified_china": "2026-10-15T20:13:53.544103+08:00",
+      "time_strength": "辅助标记；本地文件时间和ZIP时间可改动，不能单独证明历史完成时间",
+      "zip_latest_entry_time": "(2026, 10, 15, 0, 23, 58)"
+    },
+    {
+      "file": "campustrace/artifacts/handoff/CampusTrace-Frontend-20261009.zip",
+      "bytes": 136956,
+      "sha256_now": "e1b44f7f3e6dbd44e2c235f50737f858c9359d6822554ed8f2ef7ed882b87802",
+      "filesystem_modified_china": "2026-10-09T23:25:14.109451+08:00",
+      "time_strength": "辅助标记；本地文件时间和ZIP时间可改动，不能单独证明历史完成时间",
+      "zip_latest_entry_time": "(2026, 10, 9, 23, 25, 12)"
+    },
+    {
+      "file": "output/frontend-handoff/xunji-frontend-20261115-v1.zip",
+      "bytes": 17057123,
+      "sha256_now": "79cc70b655e626a0238f0fde5671e099d15c43b82f88b9b2d4895ea5272f71ef",
+      "filesystem_modified_china": "2026-11-15T20:48:43.598746+08:00",
+      "time_strength": "辅助标记；本地文件时间和ZIP时间可改动，不能单独证明历史完成时间",
+      "zip_latest_entry_time": "(2026, 11, 15, 20, 48, 42)"
+    }
+  ],
+  "limitations": [
+    "哈希确认内容一致，不单独证明过去时间",
+    "文件名、mtime和ZIP时间不是独立时间戳",
+    "交付确认支持该阶段成果最迟在记录时间已被报告；完整范围仍需源码或测试证据对应",
+    "不把记录时间写成当时已经发生的Git提交时间"
+  ]
+}
