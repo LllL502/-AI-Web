@@ -22,3 +22,11 @@ tools/cloudflared
 **/*.pyc
 **/.pytest_cache
 
+
+# Local AI runtimes and weights are installed separately.
+data/local-models
+data/local-voice
+tools/ollama
+tools/qwen-tts-env
+tools/voice-wheels
+tools/voice-download-parts
